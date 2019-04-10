@@ -9,7 +9,7 @@ climate4R is formed by the following four core packages (all in GitHub): [`loade
 ## References and Examples
 
 The main references (with worked out examples) of `cliamte4R`are: [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples), 
-[Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008)(visualization). Moreove, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers).
+[Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Moreove, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers).
 
 ## Installation
 ``` r
@@ -21,13 +21,14 @@ The main references (with worked out examples) of `cliamte4R`are: [Iturbide et a
                  "SantanderMetGroup/downscaleR"))
 ```
 
-A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is in preparation. This is the basis of the climate4R Hub.
+A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is in preparation. 
 
 ## Getting started
 
 ## Getting data
 
-The original references fo `climate4R` are:
+## Applications in sectoral impact studies (all including worked out examples):
 
-## Further References (all including worked out examples):
+**Fire danger:** [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe. Climate Services, 9, 101-110. 
 
+**Species distribution models:** [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) Tackling Uncertainties of Species Distribution Model Projections with Package mopa. The R Journal, 10(1), 122-139. 
