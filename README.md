@@ -9,7 +9,7 @@
 
 * Semmantic provenance (metadata) information for `climate4R` products can be generated using [METACLIP](http://www.metaclip.org) via the [metaclipR](https://github.com/metaclip/metaclipR) package.
 
-* A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is in preparation. 
+* A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is in preparation. This is the base layer for the **climate4R Hub** (a cloud based computing facility to run climate4R notebooks at IFCA/CSIC Cloud Services).
 
 
 ## References and Examples
