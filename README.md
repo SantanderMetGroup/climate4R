@@ -30,7 +30,7 @@ The main `climate4R` references (with worked out examples) of are: [Iturbide et 
 ## Usage by Example
 
 ## Citation
-The official reference for `climate4R` is: M Iturbide, J Bedia, S Herrera, J Baño-Medina, J Fernández, MD Frías, R Manzanas, D San-Martín, E Cimadevilla, AS Cofiño, JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. Environmental Modelling & Software, Vol. 111, 42-54. https://doi.org/10.1016/j.envsoft.2018.09.009
+The official reference for `climate4R` is: M Iturbide, J Bedia, S Herrera, J Baño-Medina, J Fernández, MD Frías, R Manzanas, D San-Martín, E Cimadevilla, AS Cofiño, JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. **Environmental Modelling & Software**, Vol. 111, 42-54. https://doi.org/10.1016/j.envsoft.2018.09.009
 
 https://github.com/SantanderMetGroup/climate4R
 
