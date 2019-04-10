@@ -10,7 +10,7 @@ A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R
 
 ## References and Examples
 
-The main references (with worked out examples) of `cliamte4R`are: [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples), 
+The main `climate4R` references (with worked out examples) of are: [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples), 
 [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Moreove, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers).
 
 Semmantic provenance (metadata) information for `climate4R` products can be generated using [METACLIP](http://www.metaclip.org) via the [metaclipR](https://github.com/metaclip/metaclipR) package.
