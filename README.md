@@ -5,6 +5,9 @@
 
 climate4R is formed by the following four core packages (all in GitHub): [`loadeR`](https://github.com/SantanderMetGroup/loadeR) , [`transformeR`](https://github.com/SantanderMetGroup/transformeR), [`downscaleR`](https://github.com/SantanderMetGroup/downscaleR) and [`visualizeR`](https://github.com/SantanderMetGroup/visualizeR).
 
+A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is in preparation. 
+
+
 ## References and Examples
 
 The main references (with worked out examples) of `cliamte4R`are: [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples), 
@@ -21,8 +24,6 @@ Semmantic provenance (metadata) information for `climate4R` products can be gene
                  "SantanderMetGroup/visualizeR",
                  "SantanderMetGroup/downscaleR"))
 ```
-
-A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is in preparation. 
 
 ## Getting started
 
