@@ -14,12 +14,23 @@
 
 ## References and Examples
 
-The main `climate4R` references (with worked out examples) of are: [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples), 
-[Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers). Furthermore, there are several applications of `climate4R` in sectoral impact studies (with worked out examples):
+The **formal reference** for `climate4R` is: 
 
-**Fire danger:** [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe. Climate Services, 9, 101-110. 
+M. Iturbide, J. Bedia, S. Herrera, J. Baño-Medina, J. Fernández, M.D. Frías, R. Manzanas, D. San-Martín, E. Cimadevilla, A.S. Cofiño and JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. *Environmental Modelling & Software*, **111**, 42-54. [DOI: /10.1016/j.envsoft.2018.09.009](https://doi.org/10.1016/j.envsoft.2018.09.009)
 
-**Species distribution models:** [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) Tackling Uncertainties of Species Distribution Model Projections with Package mopa. The R Journal, 10(1), 122-139. 
+
+Additional references for specific components of `climate4R` (with worked out examples) are:
+ * [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples)
+ * [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting )
+ * [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). 
+ 
+Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers). 
+
+Other publications describing applications of `climate4R` in **sectoral impact studies** (with worked out examples):
+
+ * **Fire danger:** [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe. Climate Services, 9, 101-110. 
+
+ * **Species distribution models:** [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) Tackling Uncertainties of Species Distribution Model Projections with Package mopa. The R Journal, 10(1), 122-139. 
 
 
 ## Installation
@@ -33,10 +44,9 @@ The main `climate4R` references (with worked out examples) of are: [Iturbide et 
 ```
 
 ## Example of use
+
 Examples of use of the framework are given in the reference papers above. In the following we illustrate the main functionalities of `climate4R` with a simple example, consisting on **calculating an ETCCDI index (Summer Days) from bias corrected EURO-CORDEX data over Southern Europe.** More details at the [brief introduction to climate4R](/man/2018_ClimateInformatics_Gutierrez.pdf) document in the `man` folder and full code at the companion [jupyter notebook](/man/notebooks/climate4R.ipynb).
 
 <img src="/man/figures/climate4r_example.png" align="center" alt="" width="" />
 
-## Citation
-The official reference for `climate4R` is: M Iturbide, J Bedia, S Herrera, J Baño-Medina, J Fernández, MD Frías, R Manzanas, D San-Martín, E Cimadevilla, AS Cofiño, JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. **Environmental Modelling & Software**, Vol. 111, 42-54. https://doi.org/10.1016/j.envsoft.2018.09.009 [https://github.com/SantanderMetGroup/climate4R]
 
