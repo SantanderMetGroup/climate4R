@@ -21,18 +21,17 @@ The **formal reference** of `climate4R` is:
 M. Iturbide, J. Bedia, S. Herrera, J. Baño-Medina, J. Fernández, M.D. Frías, R. Manzanas, D. San-Martín, E. Cimadevilla, A.S. Cofiño and JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. *Environmental Modelling & Software*, **111**, 42-54. [DOI: /10.1016/j.envsoft.2018.09.009](https://doi.org/10.1016/j.envsoft.2018.09.009)
 ****
 
-Additional references for **specific components** of `climate4R` (with worked out examples) are:
-<!--
- * [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples)
--->
- * [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting )
+Additional references for **specific components** of `climate4R` (with worked out examples) are [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ) and [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Other publications describing applications in **sectoral impact studies** (also with worked out examples) are [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) (fire danger), and [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) (Species distribution models).
+<!-- 
+* [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting )
  * [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). 
- 
+
 Other publications describing applications of `climate4R` in **sectoral impact studies** (with worked out examples):
 
  * **Fire danger:** [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe. *Climate Services*, **9**, 101-110. 
 
  * **Species distribution models:** [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) Tackling Uncertainties of Species Distribution Model Projections with Package mopa. *The R Journal*, **10**(1), 122-139. 
+-->
 
 Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative **notebooks with worked-out examples** (which are companion material of several papers). 
 
