@@ -3,7 +3,7 @@
 
 `climate4R` is a bundle of R packages for transparent climate data access, post-processing (including data collocation and bias correction / downscaling) and visualization. climate4R builds on two main data structures (grid and station, including metadata) to deal with gridded and point data from observations, reanalysis, seasonal forecasts and climate projections. It considers ensemble members as a basic dimension of the data structures. Moreover, climate4R is transparently (and remotely) connected to the Santancer Climate Data Gateway, offering several state-of-the-art datasets (including CMIP and CORDEX subsets).
 
-* climate4R is formed by the following four core packages (all in GitHub): [`loadeR`](https://github.com/SantanderMetGroup/loadeR) , [`transformeR`](https://github.com/SantanderMetGroup/transformeR), [`downscaleR`](https://github.com/SantanderMetGroup/downscaleR) and [`visualizeR`](https://github.com/SantanderMetGroup/visualizeR).
+* climate4R is formed by the following four core packages (all in GitHub): [`loadeR`](https://github.com/SantanderMetGroup/loadeR) , [`transformeR`](https://github.com/SantanderMetGroup/transformeR), [`downscaleR`](https://github.com/SantanderMetGroup/downscaleR) and [`visualizeR`](https://github.com/SantanderMetGroup/visualizeR). These packages are fully documented in the corresponding GitHub wikis.
 
 * Compatibility with some external packages has been achieved by wrapping packages, thus enhancing climate4R with new functionalities (e.g. ETCCDI extreme climate indices via the [`climdex`](https://github.com/pacificclimate/climdex.pcic) package). 
 
@@ -15,7 +15,12 @@
 ## References and Examples
 
 The main `climate4R` references (with worked out examples) of are: [Iturbide et al. 2019](https://doi.org/10.1016/j.envsoft.2018.09.009) (general description and climate change examples), 
-[Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Moreove, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers).
+[Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Moreove, there is a [notebook repository](https://github.com/SantanderMetGroup/notebooks) including several illustrative notebooks (which are companion material of several papers). Moreover, there are several applications of `climate4R` in sectoral impact studies (with worked out examples):
+
+**Fire danger:** [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe. Climate Services, 9, 101-110. 
+
+**Species distribution models:** [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) Tackling Uncertainties of Species Distribution Model Projections with Package mopa. The R Journal, 10(1), 122-139. 
+
 
 ## Installation
 ``` r
@@ -27,15 +32,10 @@ The main `climate4R` references (with worked out examples) of are: [Iturbide et 
                  "SantanderMetGroup/downscaleR"))
 ```
 
-## Usage by Example
+## Example of use
+Examples of use of the framework are given in the reference papers above. In the following we illustrate the main functionalities of `climate4R` with a simple example, consisting on **loading and bias correcting some EURO-CORDEX data over Europe.**
+
 
 ## Citation
-The official reference for `climate4R` is: M Iturbide, J Bedia, S Herrera, J Baño-Medina, J Fernández, MD Frías, R Manzanas, D San-Martín, E Cimadevilla, AS Cofiño, JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. **Environmental Modelling & Software**, Vol. 111, 42-54. https://doi.org/10.1016/j.envsoft.2018.09.009
+The official reference for `climate4R` is: M Iturbide, J Bedia, S Herrera, J Baño-Medina, J Fernández, MD Frías, R Manzanas, D San-Martín, E Cimadevilla, AS Cofiño, JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. **Environmental Modelling & Software**, Vol. 111, 42-54. https://doi.org/10.1016/j.envsoft.2018.09.009 [https://github.com/SantanderMetGroup/climate4R]
 
-https://github.com/SantanderMetGroup/climate4R
-
-## Applications in sectoral impact studies (with worked out examples):
-
-**Fire danger:** [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe. Climate Services, 9, 101-110. 
-
-**Species distribution models:** [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) Tackling Uncertainties of Species Distribution Model Projections with Package mopa. The R Journal, 10(1), 122-139. 
