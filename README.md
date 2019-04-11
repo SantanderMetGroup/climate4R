@@ -35,7 +35,7 @@ The main `climate4R` references (with worked out examples) of are: [Iturbide et 
 ## Example of use
 Examples of use of the framework are given in the reference papers above. In the following we illustrate the main functionalities of `climate4R` with a simple example, consisting on **loading and bias correcting some EURO-CORDEX data over Europe.** More details at the documents in the `man` folder (e.g. [brief introductiong to climate4R](/master/man/2018_ClimateInformatics_Gutierrez.pdf)).
 
-<img src="/man/figures/cliamte4r_example.png" align="left" alt="" width="120" />
+<img src="/man/figures/climate4r_example.png" align="center" alt="" width="" />
 
 ## Citation
 The official reference for `climate4R` is: M Iturbide, J Bedia, S Herrera, J Baño-Medina, J Fernández, MD Frías, R Manzanas, D San-Martín, E Cimadevilla, AS Cofiño, JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. **Environmental Modelling & Software**, Vol. 111, 42-54. https://doi.org/10.1016/j.envsoft.2018.09.009 [https://github.com/SantanderMetGroup/climate4R]
