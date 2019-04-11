@@ -33,7 +33,7 @@ The main `climate4R` references (with worked out examples) of are: [Iturbide et 
 ```
 
 ## Example of use
-Examples of use of the framework are given in the reference papers above. In the following we illustrate the main functionalities of `climate4R` with a simple example, consisting on **loading and bias correcting some EURO-CORDEX data over Europe.** More details at the documents in the `man` folder (e.g. [brief introductiong to climate4R](/master/man/2018_ClimateInformatics_Gutierrez.pdf)).
+Examples of use of the framework are given in the reference papers above. In the following we illustrate the main functionalities of `climate4R` with a simple example, consisting on **loading and bias correcting EURO-CORDEX data over Southern Europe.** More details at the [brief introductiong to climate4R](/master/man/2018_ClimateInformatics_Gutierrez.pdf) document in the `man` folder and full code at the companion [jupyter notebook](/master/man/notebooks/climate4R.ipynb).
 
 <img src="/man/figures/climate4r_example.png" align="center" alt="" width="" />
 
