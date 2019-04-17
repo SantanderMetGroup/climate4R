@@ -1,9 +1,9 @@
 
 ## Dockerfile containing all required software to work with climate4R in jupyter
 
-This Dockerfile is the basis of the climate4r [docker](https://www.docker.com/why-docker), where `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks are already installed. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
+This Dockerfile is the basis of the climate4r [Docker](https://www.docker.com/why-docker), where `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks are already installed. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
-## Instructions to start working with the **climate4R Hub**
+## Instructions to start working with the climate4R Docker
 
 ### Install Docker
 
