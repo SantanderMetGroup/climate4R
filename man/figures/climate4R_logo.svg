@@ -32,7 +32,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="3.2605083"
-     inkscape:cx="-16.482117"
+     inkscape:cx="80.46983"
      inkscape:cy="55.565793"
      inkscape:window-x="65"
      inkscape:window-y="24"
@@ -155,20 +155,40 @@
      height="35.718754"
      x="0.32129943"
      y="0.25808269" />
-  <flowRoot
-     xml:space="preserve"
-     id="flowRoot3785"
+  <g
+     transform="matrix(0.28222224,0,0,0.28222224,23.406278,8.1739243)"
      style="font-size:24px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#2268bc;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-     transform="matrix(0.28222224,0,0,0.28222224,23.406278,8.1739243)"><flowRegion
-       id="flowRegion3787"><rect
-         id="rect3789"
-         width="175.23105"
-         height="32.530518"
-         x="-73.085228"
-         y="-27.993036"
-         style="fill:#2268bc;fill-opacity:1" /></flowRegion><flowPara
-       id="flowPara3791"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">CLIMATE</flowPara></flowRoot>  <text
+     id="flowRoot3785">
+    <path
+       d="m -57.015625,-5.0389576 c -0.82814,0.429688 -1.691421,0.7539064 -2.589844,0.9726562 -0.89845,0.2187498 -1.835949,0.3281247 -2.8125,0.328125 -2.91407,-3e-7 -5.222661,-0.8124995 -6.925781,-2.4375 -1.703127,-1.6328088 -2.554689,-3.8437436 -2.554687,-6.6328126 -2e-6,-2.796863 0.85156,-5.007799 2.554687,-6.632812 1.70312,-1.632796 4.011711,-2.449201 6.925781,-2.449219 0.976551,1.8e-5 1.91405,0.109393 2.8125,0.328125 0.898423,0.218767 1.761704,0.542986 2.589844,0.972656 l 0,3.621094 c -0.835953,-0.570299 -1.660171,-0.988268 -2.472656,-1.253906 -0.812513,-0.265611 -1.667981,-0.398423 -2.566406,-0.398438 -1.609385,1.5e-5 -2.875009,0.515639 -3.796875,1.546875 -0.921882,1.031262 -1.382819,2.453136 -1.382813,4.265625 -6e-6,1.804695 0.460931,3.2226619 1.382813,4.2539064 0.921866,1.0312534 2.18749,1.5468779 3.796875,1.546875 0.898425,2.9e-6 1.753893,-0.1328095 2.566406,-0.3984375 0.812485,-0.2656214 1.636703,-0.6835898 2.472656,-1.2539063 l 0,3.6210938"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3806" />
+    <path
+       d="m -53.265625,-21.574114 4.511719,0 0,14.0859376 7.921875,0 0,3.4101563 -12.433594,0 0,-17.4960939"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3808" />
+    <path
+       d="m -37.984375,-21.574114 4.511719,0 0,17.4960939 -4.511719,0 0,-17.4960939"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3810" />
+    <path
+       d="m -29.03125,-21.574114 5.742188,0 3.984375,9.363281 4.007812,-9.363281 5.7304687,0 0,17.4960939 -4.2656247,0 0,-12.7968749 -4.03125,9.4335936 -2.859375,0 -4.03125,-9.4335936 0,12.7968749 -4.277344,0 0,-17.4960939"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3812" />
+    <path
+       d="m 5.4921875,-7.2655201 -7.0546875,0 -1.1132813,3.1875 -4.5351562,0 6.48046875,-17.4960939 5.37890625,0 6.4804685,17.4960939 -4.535156,0 -1.1015625,-3.1875 M -0.4375,-10.511614 l 4.7929687,0 -2.390625,-6.960937 -2.4023437,6.960937"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3814" />
+    <path
+       d="m 9.4765625,-21.574114 16.1249995,0 0,3.410156 -5.800781,0 0,14.0859379 -4.511718,0 0,-14.0859379 -5.8125005,0 0,-3.410156"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3816" />
+    <path
+       d="m 27.921875,-21.574114 12.175781,0 0,3.410156 -7.664062,0 0,3.257813 7.207031,0 0,3.410156 -7.207031,0 0,4.0078126 7.921875,0 0,3.4101563 -12.433594,0 0,-17.4960939"
+       style="font-variant:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans"
+       id="path3818" />
+  </g>
+  <text
      xml:space="preserve"
      style="font-size:24px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
      x="-93.037277"
