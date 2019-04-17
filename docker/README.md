@@ -7,21 +7,25 @@ This Dockerfile is the basis of the climate4r [Docker](https://www.docker.com/wh
 
 ### Install Docker
 
-The best option is to install Docker from its own [repositories](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository)
+The best option is to install Docker from its own [repositories](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-using-the-repository).
 
 After installing, to be able to use Docker without the `sudo`, it is necessary to add your user to the docker group (this group is created during the installation).
 
+```
 $ sudo usermod -aG docker your-user
+```
 
 Finally, "logout" and "login" again.
 
 Find more information about docker at [https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b)
 
-### Run the climate4r Docker image
+### Pull and run the climate4r Docker image
 
-
+```
 $ docker pull santandermetgroup/climate4r 
+
 $ docker run -p 8888:8888 santandermetgroup/climate4r 
+```
 
 The last command will return an Url, for instance :
 
