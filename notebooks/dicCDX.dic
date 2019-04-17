@@ -1,0 +1,2 @@
+identifier,short_name,time_step,lower_time_bound,upper_time_bound,cell_metod,offset,scale,deaccum,derived,interface
+tasmax,tasmax,24h,0,24,max,-273.15,1,0,0,
