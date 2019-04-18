@@ -27,9 +27,9 @@ $ docker pull santandermetgroup/climate4r
 $ docker run -p 8888:8888 santandermetgroup/climate4r 
 ```
 
-The last command will return an Url, for instance :
+The last command will return an Url:
 
-http://(317acec1df5f or 127.0.0.1):8888/
+http://(firstchoice or secondchoice):8888/
 
-Write http://317acec1df5f:8888/ or http://127.0.0.1:8888/ in your browser and start working with climate4R in jupyter!
+Write http://firstchoice:8888/ or http://secondchoice:8888/ in your browser and start working with climate4R in jupyter!
 
