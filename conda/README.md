@@ -4,7 +4,7 @@
 ### Install
 
 ```bash
-conda install -c santandermetgroup climate4r
+conda install -c conda-forge -c santandermetgroup climate4r
 ```
 
 ### Build
