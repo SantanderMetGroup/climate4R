@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netcdf xmlns="http://www.unidata.ucar.edu/namespaces/netcdf/ncml-2.2">
+	<aggregation type="union">
+		<netcdf>
+		<aggregation dimName="time" type="joinExisting" timeUnitsChange="true">
+		<variableAgg name="tasmax"/>
+			<netcdf location="/home/jovyan/shared/data/historical/tasmax_EUR-44_ICHEC-EC-EARTH_historical_r12i1p1_SMHI-RCA4_v1_day_19710101-19751231.nc" ncoords="1826"/>
+			<netcdf location="/home/jovyan/shared/data/historical/tasmax_EUR-44_ICHEC-EC-EARTH_historical_r12i1p1_SMHI-RCA4_v1_day_19760101-19801231.nc" ncoords="1827"/>
+			<netcdf location="/home/jovyan/shared/data/historical/tasmax_EUR-44_ICHEC-EC-EARTH_historical_r12i1p1_SMHI-RCA4_v1_day_19810101-19851231.nc" ncoords="1826"/>
+			<netcdf location="/home/jovyan/shared/data/historical/tasmax_EUR-44_ICHEC-EC-EARTH_historical_r12i1p1_SMHI-RCA4_v1_day_19860101-19901231.nc" ncoords="1826"/>
+			<netcdf location="/home/jovyan/shared/data/historical/tasmax_EUR-44_ICHEC-EC-EARTH_historical_r12i1p1_SMHI-RCA4_v1_day_19910101-19951231.nc" ncoords="1826"/>
+			<netcdf location="/home/jovyan/shared/data/historical/tasmax_EUR-44_ICHEC-EC-EARTH_historical_r12i1p1_SMHI-RCA4_v1_day_19960101-20001231.nc" ncoords="1827"/>
+		</aggregation>
+		</netcdf>
+	</aggregation>
+</netcdf>
