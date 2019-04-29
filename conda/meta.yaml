@@ -1,0 +1,31 @@
+package:
+  name: climate4r
+  version: 0.1
+
+requirements:
+  build:
+    - tar
+    - unzip
+    - openjdk
+    - r
+    - r-rjava
+    - r-git2r
+    - r-udunits2
+    - r-devtools
+    - r-rgdal
+    - r-rgeos
+    - r-rcurl
+  run:
+    - openjdk
+    - r
+    - r-rjava
+    - r-git2r
+    - r-udunits2
+    - r-devtools
+    - r-rgdal
+    - r-rgeos
+    - r-rcurl
+    - r-irkernel
+
+about:
+  home: https://github.com/SantanderMetGroup/

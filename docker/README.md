@@ -33,3 +33,10 @@ http://(firstchoice or secondchoice):8888/
 
 Write http://firstchoice:8888/ or http://secondchoice:8888/ in your browser and start working with climate4R in jupyter!
 
+### Build
+
+```bash
+docker build -t climate4r . < Dockerfile
+docker login
+docker push santandermetgroup/climate4r:latest
+```
