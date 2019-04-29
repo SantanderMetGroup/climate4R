@@ -11,7 +11,7 @@
 
 * Semantic provenance (metadata) information for `climate4R` products can be generated using [METACLIP](http://www.metaclip.org) via the [metaclipR](https://github.com/metaclip/metaclipR) package.
 
-* A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is [avaialable](https://github.com/SantanderMetGroup/climate4R/tree/master/docker). This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
+* A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is [available](https://github.com/SantanderMetGroup/climate4R/tree/master/docker). This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
 
 ## References and Examples
@@ -49,6 +49,7 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
 Alternatively, the climate4R framework can be installed via [conda](https://github.com/SantanderMetGroup/climate4R/tree/master/conda):
 ```
 conda install -c santandermetgroup climate4r
+
 
 ## Example of use
 
