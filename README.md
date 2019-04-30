@@ -48,7 +48,7 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
 ```
 Alternatively, the climate4R framework can be installed via [conda](https://github.com/SantanderMetGroup/climate4R/tree/master/conda):
 ```
-conda install -c santandermetgroup climate4r
+conda install -c conda-forge -c santandermetgroup climate4r
 ```
 
 ## Example of use
