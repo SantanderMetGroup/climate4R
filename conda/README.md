@@ -1,13 +1,7 @@
 
 ## conda recipe for climate4R
 
-### Install
-
-```bash
-conda install -c conda-forge -c santandermetgroup climate4r==0.1
-```
-
-### Build
+Install conda-build in a conda environment and execute the following:
 
 ```bash
 conda build .
