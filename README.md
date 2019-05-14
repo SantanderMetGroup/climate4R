@@ -58,17 +58,16 @@ Examples of use of the `climate4R` framework are given in the reference papers a
 <img src="/man/figures/climate4r_example.png" align="center" alt="" width="" />
 
 
+***
 ## User Support
 
-***
-
 Please note that the pool of people who can provide support for `climate4R` packages is very small and our time for support is limited. We don't necessarily have the capacity for long, open-ended user support. Please follow these basic guidelines before posting:
+
 * Introduce the problem before you post any code
 * Help others reproduce the problem
 * Avoid sending the same question to multiple places
-These [posting guidelines](https://stackoverflow.com/help/how-to-ask) at stackoverflow provide further recommendations on how to make a good question. 
 
-If questions are kept short, specific and direct, there's a greater chance that someone will take on the ticket. 
+These [posting guidelines](https://stackoverflow.com/help/how-to-ask) at stackoverflow provide further recommendations on how to make a good question. If questions are kept short, specific and direct, there's a greater chance that someone will take on the ticket. 
 
 ***
 
