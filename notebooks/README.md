@@ -17,7 +17,7 @@ An overview of the notebooks so far included and the corresponding published art
 | 2018_fireDanger_ClimateServices | Seasonal predictions of Fire Weather Index: Paving the way for their operational applicability in Mediterranean Europe | http://dx.doi.org/10.1016/j.cliser.2017.04.001
 | 2018_climate4R_example | The R-based climate4R open framework for reproducible climate data access and post-processing | https://doi.org/10.1016/j.envsoft.2018.09.009
 | 2018_drought4R_NCOMMS | Exacerbated fires in Mediterranean Europe due to anthropogenic warming projected with non-stationary climate-fire models | https://doi.org/10.1038/s41467-018-06358-z
-| 2018_metaclip_EMS* | METACLIP: A semantic provenance framework for climate products | _submitted_
+| 2018_metaclip_EMS* | METACLIP: A semantic provenance framework for climate products | _under review_
 
 
 ***
