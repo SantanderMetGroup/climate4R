@@ -13,6 +13,9 @@
 
 * A [docker](https://www.docker.com/why-docker) file with pre-installed `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks is [available](https://github.com/SantanderMetGroup/climate4R/tree/master/docker). This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
+An schematic illustration of the different components of `climate4R` is given in the following figure:
+
+<img src="/man/figures/climate4R.png" align="center" alt="" />
 
 ## References and Examples
 
