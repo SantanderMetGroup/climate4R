@@ -15,8 +15,9 @@
 
 An schematic illustration of the different components of `climate4R` is given in the following figure:
 
-<img align="center" alt="" src="/man/figures/climate4R.png"/>
-
+<p align="center">
+<img src="/man/figures/climate4R.png"/>
+</p>
 ## References and Examples
 
 
