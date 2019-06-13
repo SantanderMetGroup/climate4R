@@ -1,12 +1,12 @@
-##Apply climate4R function to each loaded set (chunk) of latitudes.
+## Apply climate4R function to each loaded set (chunk) of latitudes.
 
-###Description
+### Description
 
 Function tailored to operations performed over large data (e.g. for the entire world).
 The function uses a loop where in each iteration a chunk of latitudes is loaded and a climate4R
 function is applied to it.
 
-###Usage 
+### Usage 
 
 z <- climate4R.chunk(n.chunks = 10,
                      C4R.FUN.args = list(FUN = "climdexGrid",
@@ -17,7 +17,7 @@ z <- climate4R.chunk(n.chunks = 10,
                                              latLim = c(36, 45)),
                     output.path = NULL)
                     
-###Arguments
+### Arguments
 
 * **n.chunks** number of latitude chunks over which iterate
 
@@ -33,22 +33,22 @@ arguments are passed (instead of a grid): \code{list(dataset = "", var = "")}.
 Useful when the amount of data after the C4R function application is large, i.e. similar
 to the pre-processed data (e.g. when the \link{\code{biasCorrection}} function is applied.)
 
-###Details
+### Details
 
 Note that the appropriate libraries need to be loaded before applying this function. Packages
 \code{loadeR} and \code{transformeR} are always needed. Depending on the C4R function that
 is applied the will also be needed to load the corresponding package/s.
 etc.)
 
-###Value
+### Value
 
 If \code{output.path} is NULL a grid containing all latitudes is returned. If \code{output.path}
 is provided *.rda objects for each latitude chunk are saved in the specified path.
 
-###Authors
+### Authors
 M. Iturbide
 
-###Examples
+### Examples
 #### Load climate4R.chunk function into the R environment
 source("R/climate4R.chunk.R")
 
