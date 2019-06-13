@@ -1,3 +1,5 @@
+# climate4R.chunk.R contains the **climate4R.chunk** function and this is its documentation
+
 ## Apply climate4R function to each loaded set (chunk) of latitudes.
 
 ### Description
@@ -23,26 +25,26 @@ z <- climate4R.chunk(n.chunks = 10,
 
 * **C4R.FUN.args** list of arguments being the name of the C4R function (character)
 the first. The rest of the arguments are those passed to the selected C4R function.
-This list is passed to function \link{\code{do.call}} internally. For the parameters
+This list is passed to function `do.call` internally. For the parameters
 (of a particular C4R function) where data (grids) need to be provided, here, a list of 2
-arguments are passed (instead of a grid): \code{list(dataset = "", var = "")}.
+arguments are passed (instead of a grid): `list(dataset = "", var = "")`.
 
 * **loadGridData.args** list of collocation arguments passed to function loadGridData.
 
 * **output.path** Optional. Path where the results of each iteration will be saved (*.rda).
 Useful when the amount of data after the C4R function application is large, i.e. similar
-to the pre-processed data (e.g. when the \link{\code{biasCorrection}} function is applied.)
+to the pre-processed data (e.g. when the `biasCorrection` function is applied.)
 
 ### Details
 
 Note that the appropriate libraries need to be loaded before applying this function. Packages
-\code{loadeR} and \code{transformeR} are always needed. Depending on the C4R function that
+`loadeR` and `transformeR` are always needed. Depending on the C4R function that
 is applied the will also be needed to load the corresponding package/s.
 etc.)
 
 ### Value
 
-If \code{output.path} is NULL a grid containing all latitudes is returned. If \code{output.path}
+If `output.path` is NULL a grid containing all latitudes is returned. If `output.path`
 is provided *.rda objects for each latitude chunk are saved in the specified path.
 
 ### Authors
