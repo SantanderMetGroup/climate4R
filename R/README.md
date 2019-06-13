@@ -65,13 +65,9 @@ loginUDG(username = "", password = "")
 
 ##### #Apply function
 z <- climate4R.chunk(n.chunks = 10,\
-                     C4R.FUN.args = list(FUN = "climdexGrid",
-                                         index.code = "CWD",
-                                         pr = list(dataset = "WATCH_WFDEI", var = "pr")),\
-                    loadGridData.args = list(years = 1981:2000,
-                                             lonLim = c(-10, 10),
-                                             latLim = c(36, 45)),\
-                    output.path = NULL)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C4R.FUN.args = list(FUN = "climdexGrid", index.code = "CWD", pr = list(dataset = "WATCH_WFDEI", var = "pr")),\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;loadGridData.args = list(years = 1981:2000, lonLim = c(-10, 10), latLim = c(36, 45)),\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;output.path = NULL)
                     
 ##### #Plot the output                    
 library(visualizeR)\
