@@ -42,7 +42,6 @@ to the pre-processed data (e.g. when the `biasCorrection` function is applied.)
 Note that the appropriate libraries need to be loaded before applying this function. Packages
 `loadeR` and `transformeR` are always needed. Depending on the C4R function that
 is applied it will also be needed to load the corresponding package/s.
-etc.)
 
 ### Value
 
