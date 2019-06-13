@@ -59,7 +59,7 @@ library(loadeR)\
 library(transformeR)\
 library(climate4R.climdex)
 
-##### #Logint to the UDG
+##### #Login to the UDG
 
 loginUDG(username = "", password = "")
 
