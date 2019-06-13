@@ -1,4 +1,4 @@
-# Perform climate4R operations over a large amount of data
+# Perform climate4R operations over a large amount of data with function climate4R.chunk
 
 **climate4R.chunk.R** contains the `climate4R.chunk` function and this is its documentation.
 
@@ -75,3 +75,4 @@ z <- climate4R.chunk(n.chunks = 10,\
 library(visualizeR)\
 spatialPlot(climatology(z), backdrop.theme = "coastline")
 
+<img src="/man/figures/climate4R.chunk_example.png" />
