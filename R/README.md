@@ -75,6 +75,6 @@ z <- climate4R.chunk(n.chunks = 10,\
                     
 ##### #Plot the output                    
 library(visualizeR)\
-spatialPlot(climatology(z))
+spatialPlot(climatology(z), backdrop.theme = "coastline")
 
 <img src="/man/figures/climate4R.chunk_example.png" />
