@@ -1,4 +1,6 @@
-# climate4R.chunk.R contains the **climate4R.chunk** function and this is its documentation
+# Perform climate4R operations over a large amount of data
+
+**climate4R.chunk.R** contains the `climate4R.chunk` function and this is its documentation.
 
 ## Apply climate4R function to each loaded set (chunk) of latitudes.
 
@@ -73,4 +75,3 @@ z <- climate4R.chunk(n.chunks = 10,\
 library(visualizeR)\
 spatialPlot(climatology(z), backdrop.theme = "coastline")
 
-<img src="/man/figures/climate4R.chunk_example.png" />
