@@ -10,7 +10,7 @@ function is applied to it.
 
 ### Usage 
 
-z <- climate4R.chunk(n.chunks = 10,
+climate4R.chunk(n.chunks = 10,
                      C4R.FUN.args = list(FUN = "climdexGrid",
                                          index.code = "CWD",
                                          pr = list(dataset = "WATCH_WFDEI", var = "pr")),
@@ -51,19 +51,19 @@ is provided *.rda objects for each latitude chunk are saved in the specified pat
 M. Iturbide
 
 ### Examples
-#### Load climate4R.chunk function into the R environment
+##### #Load climate4R.chunk function into the R environment
 source("R/climate4R.chunk.R")
 
-#### Load climate4R packages
+##### #Load climate4R packages
 library(loadeR)\
 library(transformeR)\
 library(climate4R.climdex)
 
-#### Logint to the UDG
+##### #Logint to the UDG
 
 loginUDG(username = "", password = "")
 
-#### Apply function
+##### #Apply function
 z <- climate4R.chunk(n.chunks = 10,\
                      C4R.FUN.args = list(FUN = "climdexGrid",
                                          index.code = "CWD",
@@ -73,7 +73,7 @@ z <- climate4R.chunk(n.chunks = 10,\
                                              latLim = c(36, 45)),\
                     output.path = NULL)
                     
-#### Plot the output                    
+##### #Plot the output                    
 library(visualizeR)\
 spatialPlot(climatology(z))
 
