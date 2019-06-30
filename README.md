@@ -57,6 +57,20 @@ Alternatively, the climate4R framework can be installed via [conda](https://gith
 ```
 conda install -c conda-forge -c santandermetgroup climate4r
 ```
+### NOTE: installation of specific package versions
+
+In case a particular paper notebook is to be replicated, the installation of specific version tags can be done by just explicitly indicating the tag number in the repo name. For example:
+
+```r
+   > devtools::install_github("SantanderMetGroup/visualizeR@v1.0.0")
+```
+installs the `visualizeR` package version used in Frías _et al._ 2018, while the following
+
+```r
+   > devtools::install_github("SantanderMetGroup/visualizeR@v1.4.6")
+```
+will install a more recent version of the package used in the paper by Iturbide _et al._ 2019.
+
 
 ## Example of use
 
