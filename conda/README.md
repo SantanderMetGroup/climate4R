@@ -7,7 +7,7 @@ Install conda-build in a conda environment and execute the following:
 conda install -c conda-forge -c santandermetgroup climate4r
 ```
 
-Notes for creating updating the anaconda repository package (not for users):
+### Build (only for the admin)
 ```bash
 conda build -c conda-forge .
 anaconda login
