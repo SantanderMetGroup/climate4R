@@ -77,10 +77,12 @@ climate4R.chunk <- function(n.chunks = 10,
   data <- C4R.FUN.args[ind.data]
   datasets <- lapply(data, '[[',"dataset")
   vars <- lapply(data, '[[',"var")
-  df.datasets <- read.csv(file.path(find.package("loadeR"), "datasets.txt"), stringsAsFactors = FALSE)[ ,1:4]
+  lf <- list.files(file.path(find.package("climate4R.UDG")), pattern = "datasets.*.txt", full.names = TRUE)
+  df.datasets <- lapply(lf, function(x) read.csv(x, stringsAsFactors = FALSE))
+  df.datasets <- do.call("rbind", df.datasets)  
   origVarNames <- unlist(lapply(1:length(datasets), function(d) {
     df.sub <- df.datasets[which(df.datasets$name == datasets[[d]]), 4]
-    df.voc <- tryCatch({read.csv(file.path(find.package("loadeR"), "dictionaries", df.sub))}, error = function(err){NA})
+    df.voc <- tryCatch({read.csv(file.path(find.package("climate4R.UDG"), "dictionaries", df.sub))}, error = function(err){NA})
     tryCatch({as.character(df.voc$short_name[df.voc$identifier == vars[[d]]])}, error = function(err){NA})
   }))
   origVarNames[which(is.na(origVarNames))] <- unlist(vars[which(is.na(origVarNames))])
