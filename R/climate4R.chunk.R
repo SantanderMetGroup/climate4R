@@ -107,7 +107,11 @@ climate4R.chunk <- function(n.chunks = 10,
   n.lats.y <- lapply(lats.y, length)
   n.lat.chunk <- lapply(n.lats.y, function(y) ceiling(y/n.chunks))
   aux.ind <- lapply(n.lat.chunk, function(ch) rep(1:(n.chunks - 1), each = ch))
- ind <- lapply(1:length(aux.ind), function(i) aux.ind[[i]][1:n.lats.y[[i]]])
+  ind <- lapply(1:length(aux.ind), function(i) {
+   indi <- aux.ind[[i]][1:n.lats.y[[i]]]
+   indi[which(is.na(indi))] <- max(indi, na.rm = TRUE) + 1
+   indi
+   })
    # ind <- lapply(1:length(aux.ind), function(i) c(aux.ind[[i]], rep((max(aux.ind[[i]]) + 1), each = n.lats.y[[i]] - length(aux.ind[[i]]))))
   lat.list <- lapply(1:length(ind), function(ch) split(lats.y[[ch]], f = ind[[ch]]))
   lat.range.chunk <- lapply(lat.list, function(ch) lapply(ch, range))
