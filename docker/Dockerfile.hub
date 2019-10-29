@@ -1,3 +1,0 @@
-FROM santandermetgroup/climate4r:latest
-
-COPY --chown=jovyan:users examples /home/$NB_USER/examples
