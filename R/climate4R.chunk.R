@@ -77,10 +77,12 @@ climate4R.chunk <- function(n.chunks = 10,
   data <- C4R.FUN.args[ind.data]
   datasets <- lapply(data, '[[',"dataset")
   vars <- lapply(data, '[[',"var")
-  df.datasets <- read.csv(file.path(find.package("loadeR"), "datasets.txt"), stringsAsFactors = FALSE)[ ,1:4]
+  lf <- list.files(file.path(find.package("climate4R.UDG")), pattern = "datasets.*.txt", full.names = TRUE)
+  df.datasets <- lapply(lf, function(x) read.csv(x, stringsAsFactors = FALSE))
+  df.datasets <- do.call("rbind", df.datasets)  
   origVarNames <- unlist(lapply(1:length(datasets), function(d) {
     df.sub <- df.datasets[which(df.datasets$name == datasets[[d]]), 4]
-    df.voc <- tryCatch({read.csv(file.path(find.package("loadeR"), "dictionaries", df.sub))}, error = function(err){NA})
+    df.voc <- tryCatch({read.csv(file.path(find.package("climate4R.UDG"), "dictionaries", df.sub))}, error = function(err){NA})
     tryCatch({as.character(df.voc$short_name[df.voc$identifier == vars[[d]]])}, error = function(err){NA})
   }))
   origVarNames[which(is.na(origVarNames))] <- unlist(vars[which(is.na(origVarNames))])
@@ -95,7 +97,8 @@ climate4R.chunk <- function(n.chunks = 10,
   }))
   names(di) <- names(datasets)
   lats <- lapply(di, function(d) d[["Dimensions"]][["lat"]][["Values"]])
-  lats.y <- lapply(1:length(lats), function(y) lats[[y]][which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][1]))[1]:(which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][2]))[1] + 1)])
+  if(is.null(loadGridData.args[["latLim"]])) loadGridData.args[["latLim"]] <- range(lats)
+  lats.y <- lapply(1:length(lats), function(y) lats[[y]][which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][1]))[1]:(min(c(length(lats[[y]]),which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][2]))[1] + 1)))])
   nmax.chunks <- min(unlist(lapply(lats.y, length)))
   if (n.chunks > ceiling(nmax.chunks/2)) {
     warning("n.chunks (", n.chunks, ") is too many. n.chunks set to ", ceiling(nmax.chunks/2))
@@ -104,7 +107,12 @@ climate4R.chunk <- function(n.chunks = 10,
   n.lats.y <- lapply(lats.y, length)
   n.lat.chunk <- lapply(n.lats.y, function(y) ceiling(y/n.chunks))
   aux.ind <- lapply(n.lat.chunk, function(ch) rep(1:(n.chunks - 1), each = ch))
-  ind <- lapply(1:length(aux.ind), function(i) c(aux.ind[[i]], rep((max(aux.ind[[i]]) + 1), each = n.lats.y[[i]] - length(aux.ind[[i]]))))
+  ind <- lapply(1:length(aux.ind), function(i) {
+   indi <- aux.ind[[i]][1:n.lats.y[[i]]]
+   indi[which(is.na(indi))] <- max(indi, na.rm = TRUE) + 1
+   indi
+   })
+   # ind <- lapply(1:length(aux.ind), function(i) c(aux.ind[[i]], rep((max(aux.ind[[i]]) + 1), each = n.lats.y[[i]] - length(aux.ind[[i]]))))
   lat.list <- lapply(1:length(ind), function(ch) split(lats.y[[ch]], f = ind[[ch]]))
   lat.range.chunk <- lapply(lat.list, function(ch) lapply(ch, range))
   # lat.range.chunk.x <- lapply(lat.range.chunk, function(ch) lapply(ch, function(x) x + c(-3, 3)))

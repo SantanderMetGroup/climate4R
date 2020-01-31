@@ -5,11 +5,11 @@
 
 * `climate4R` is formed by the following four core packages (all in GitHub): [`loadeR`](https://github.com/SantanderMetGroup/loadeR) , [`transformeR`](https://github.com/SantanderMetGroup/transformeR), [`downscaleR`](https://github.com/SantanderMetGroup/downscaleR) and [`visualizeR`](https://github.com/SantanderMetGroup/visualizeR). These packages are fully documented in the corresponding GitHub wikis.
 
-* Other useful packages also forming the `climate4R` bundle are [`geoprocessoR`](https://github.com/SantanderMetGroup/geoprocessoR) and [`convertR`](https://github.com/SantanderMetGroup/convertR).   
+* `climate4R` capabilities are further extended by providing support to physical units handling ([`convertR`](https://github.com/SantanderMetGroup/convertR) package) and geoprocessing tasks ([`geoprocessoR`](https://github.com/SantanderMetGroup/geoprocessoR) package).   
 
 * Compatibility with some external packages has been achieved by wrapping packages, thus enhancing `climate4R` with new functionalities (e.g. ETCCDI extreme climate indices via the [`climdex`](https://github.com/pacificclimate/climdex.pcic) package). 
 
-* Semantic provenance (metadata) information for `climate4R` products can be generated using [METACLIP](http://www.metaclip.org) via the [metaclipR](https://github.com/metaclip/metaclipR) package.
+* Semantic provenance (metadata) information for `climate4R` products can be generated using [METACLIP](http://www.metaclip.org) via the [`metaclipR`](https://github.com/metaclip/metaclipR) package.
 
 * [Conda](https://github.com/SantanderMetGroup/climate4R/tree/master/conda) and [docker](https://github.com/SantanderMetGroup/climate4R/tree/master/docker) `climate4R` installations available. The [docker](https://www.docker.com/why-docker) file also includes the [jupyter](https://jupyter.readthedocs.io/en/latest) framework. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
@@ -18,7 +18,7 @@ An schematic illustration of the different components of `climate4R` is given in
 -->
 
 <p align="center">
-<img src="/man/figures/climate4R.png"/>
+<img src="/man/figures/climate4R_2.png"/>
 </p>
 
 ## References and Examples
@@ -30,7 +30,7 @@ The **formal reference** of `climate4R` is:
 M. Iturbide, J. Bedia, S. Herrera, J. Baño-Medina, J. Fernández, M.D. Frías, R. Manzanas, D. San-Martín, E. Cimadevilla, A.S. Cofiño and JM Gutiérrez (2019) The R-based climate4R open framework for reproducible climate data access and post-processing. *Environmental Modelling & Software*, **111**, 42-54. [DOI: /10.1016/j.envsoft.2018.09.009](https://doi.org/10.1016/j.envsoft.2018.09.009)
 ****
 
-Additional references for **specific components** of `climate4R` (with worked out examples) are [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ) and [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). Other publications describing applications in **sectoral impact studies** (also with worked out examples) are [Bedia et al. (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) (fire danger), and [Iturbide et al. (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) (Species distribution models).
+Additional references for **specific components** of `climate4R` (with worked examples) are [Cofiño _et al._ 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting ), [Frías _et al._ 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization),  [Bedia _et al._ 2019](https://doi.org/10.1016/j.envsoft.2019.07.005) (data provenance) and [Bedia _et al._ 2019a](https://doi.org/10.5194/gmd-2019-224) (statistical downscaling). Other publications describing applications in **sectoral impact studies** (also with worked out examples) are [Bedia _et al._ (2018)](http://doi.org/10.1016/j.cliser.2017.04.001) (fire danger) or [Iturbide _et al._ (2018)](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) (Species distribution models), among others.
 <!-- 
 * [Cofiño et al. 2018](http://doi.org/10.1016/j.cliser.2017.07.001) (seasonal forecasting )
  * [Frías et al. 2018](http://doi.org/10.1016/j.envsoft.2017.09.008) (visualization). 
@@ -48,6 +48,7 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
 ``` r
     > library(devtools)
     > install_github(c("SantanderMetGroup/loadeR.java",
+                 "SantanderMetGroup/climate4R.UDG",
                  "SantanderMetGroup/loadeR",
                  "SantanderMetGroup/transformeR",
                  "SantanderMetGroup/visualizeR",
