@@ -48,6 +48,7 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
 ``` r
     > library(devtools)
     > install_github(c("SantanderMetGroup/loadeR.java",
+                 "SantanderMetGroup/climate4R.UDG",
                  "SantanderMetGroup/loadeR",
                  "SantanderMetGroup/transformeR",
                  "SantanderMetGroup/visualizeR",
