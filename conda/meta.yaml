@@ -12,6 +12,7 @@ requirements:
   build:
     - r
     - openjdk
+    - r-rjava
     - r-devtools
     - r-udunits2
     - r-ncdf4
@@ -20,6 +21,7 @@ requirements:
   run:
     - r
     - openjdk
+    - r-rjava
     - r-devtools
     - r-udunits2
     - r-ncdf4

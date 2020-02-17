@@ -1,9 +1,7 @@
 ## conda recipe for climate4R
 
-Install conda-build in a conda environment and execute the following:
-
 ```bash
-conda install -c conda-forge -c santandermetgroup climate4r
+conda install -c defaults -c conda-forge -c santandermetgroup climate4r
 ```
 
 ### Build (only for the admin)
@@ -16,6 +14,8 @@ channels:
   - conda-forge
 channel_priority: 'strict'
 ```
+
+Install conda-build in a conda environment and execute the following:
 
 ```bash
 conda build -c conda-forge .

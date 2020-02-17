@@ -3,7 +3,7 @@ export UDUNITS2_LIB=${PREFIX}/lib
 export CPATH=${PREFIX}/include
 
 # for rjava
-export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib/server:$PREFIX/lib/R/library/rJava/libs:$PREFIX/jre/lib/amd64/server
+#export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib/server:$PREFIX/lib/R/library/rJava/libs:$PREFIX/jre/lib/amd64/server
 
 #R CMD javareconf
 #R --vanilla -e 'install.packages("rJava")'
