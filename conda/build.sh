@@ -1,45 +1,22 @@
-export LD_LIBRARY_PATH=${PREFIX}/lib/server:$PREFIX/lib/R/library/rJava/libs:$PREFIX/jre/lib/amd64/server
-export TAR=$PREFIX/bin/tar
-R CMD javareconf
-R --vanilla -e 'install.packages("lattice", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("Matrix", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("glmnet", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("fields", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("evd", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("magrittr", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("knitr", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("raster", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("scales", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("vioplot", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("data.table", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("ncdf4", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("sp", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("MASS", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("SPEI", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("deepnet", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("gridGraphics", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("gridExtra", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("rmarkdown", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("akima", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("RcppEigen", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("RColorBrewer", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("mapplots", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("SpecsVerification", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("verification", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("padr", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("easyVerification", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("latticeExtra", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("abind ", repos = "https://cloud.r-project.org")' 
-R --vanilla -e 'install.packages("rgeos", repos = "http://cran.rediris.es/")'
-R --vanilla -e 'library(devtools);install_version("gridGraphics", version = "0.3-0", repos = "http://cran.us.r-project.org")'
-R --vanilla -e 'library(devtools);install_version("tree", version = "1.0-39", repos = "http://cran.us.r-project.org")'
-## SantanderMetGroup
+# for convertR
+export UDUNITS2_LIB=${PREFIX}/lib
+export CPATH=${PREFIX}/include
+
+# for rjava
+#export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib/server:$PREFIX/lib/R/library/rJava/libs:$PREFIX/jre/lib/amd64/server
+
+#R CMD javareconf
+#R --vanilla -e 'install.packages("rJava")'
+
+# required version of devtools for transformer
+R --vanilla -e 'install.packages("devtools", repos="http://cran.r-project.org")'
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.UDG@spock")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.java")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@v1.4.11")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.ECOMS")' 
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/transformeR@v1.4.8")' 
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/downscaleR@v3.0.6")' 
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/visualizeR@v1.3.2")' 
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/transformeR@v1.7.2")'
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/downscaleR@v3.1.0")' 
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/visualizeR@devel")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/convertR")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/geoprocessoR@v0.1.0")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.climdex@v0.2.1")' 
@@ -48,9 +25,6 @@ R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.2nc")
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/fireDanger")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/VALUE")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.value@v0.0.0")' 
-R --vanilla -e 'install.packages("class", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("nmle", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("spatstat", repos = "http://cran.rediris.es/")' 
-R --vanilla -e 'install.packages("rpart", repos = "http://cran.rediris.es/")'  
+R --vanilla -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-38.tar.gz")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/mopa")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/drought4R")'
