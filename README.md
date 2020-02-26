@@ -63,7 +63,7 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
 [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a free minimal installer for conda. Using the [conda recipe](https://github.com/SantanderMetGroup/climate4R/tree/master/conda) it is possible to install an up-to-date version of the different packages composing the `climate4R` framework, and all the associated library dependencies (udunits, openjdk, netcdf Java etc.), avoiding some possible problems like the R-java configuration etc. Note that the appropriate miniconda distribution must be installed before running the command (go to the [miniconda installers page](https://docs.conda.io/en/latest/miniconda.html)):
 
 ```
-conda install -c conda-forge -c santandermetgroup climate4r
+conda install -c defaults -c conda-forge -c santandermetgroup climate4r
 ```
 
 ### NOTE: installation of specific package versions
