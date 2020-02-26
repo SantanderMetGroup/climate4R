@@ -99,7 +99,7 @@ climate4R.chunk <- function(n.chunks = 10,
   lats <- lapply(di, function(d) d[["Dimensions"]][["lat"]][["Values"]])
   if(is.null(loadGridData.args[["latLim"]])) loadGridData.args[["latLim"]] <- range(lats)
   lats.y <- lapply(1:length(lats), function(y) lats[[y]][which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][1]))[1]:(min(c(length(lats[[y]]),which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][2]))[1] + 1)))])
-  nmax.chunks <- min(unlist(lapply(lats.y, length)))
+  nmax.chunks <- unlist(lapply(lats.y, length))[1]
   if (n.chunks > ceiling(nmax.chunks/2)) {
     warning("n.chunks (", n.chunks, ") is too many. n.chunks set to ", ceiling(nmax.chunks/2))
     n.chunks <- ceiling(nmax.chunks/2)
