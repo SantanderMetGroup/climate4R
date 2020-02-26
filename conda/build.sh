@@ -12,7 +12,7 @@ export CPATH=${PREFIX}/include
 R --vanilla -e 'install.packages("devtools", repos="http://cran.r-project.org")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.UDG@spock")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.java")'
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@v1.4.11")' 
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@devel")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.ECOMS")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/transformeR@v1.7.2")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/downscaleR@v3.1.0")' 
