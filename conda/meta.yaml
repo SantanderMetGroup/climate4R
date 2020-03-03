@@ -24,6 +24,7 @@ requirements:
     - xorg-libxt
     - udunits2
     - curl
+    - zstd>=1.4.4
   run:
     - r-base==3.6.2
     - openjdk
@@ -38,6 +39,7 @@ requirements:
     - xorg-libxt
     - udunits2
     - curl
+    - zstd>=1.4.4
 
 about:
   home: https://github.com/SantanderMetGroup/climate4R
