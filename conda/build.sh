@@ -8,9 +8,7 @@ export CPATH=${PREFIX}/include
 #R CMD javareconf
 #R --vanilla -e 'install.packages("rJava")'
 
-# required version of devtools for transformer
-R --vanilla -e 'install.packages("devtools", repos="http://cran.r-project.org")'
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.UDG@spock")'
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.UDG@v0.1.0")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.java")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@devel")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.ECOMS")' 
@@ -18,7 +16,7 @@ R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/transformeR@
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/downscaleR@v3.1.0")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/visualizeR@devel")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/convertR")' 
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/geoprocessoR@v0.1.0")' 
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/geoprocessoR@v0.2.0")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.climdex@v0.2.1")' 
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.indices@v0.1.0")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.2nc@v0.1.1")'

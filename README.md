@@ -68,7 +68,7 @@ conda create --name nameofmycondaenvironment
 # activate the environment
 conda activate nameofmycondaenvironment
 # install climate4R
-conda install -c defaults -c conda-forge -c santandermetgroup climate4r
+conda install -c defaults -c r -c conda-forge -c santandermetgroup climate4r
 ```
 Activate the conda environment to work with climate4R. To deactivate the environment run the following:
 

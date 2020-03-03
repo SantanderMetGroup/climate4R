@@ -1,30 +1,43 @@
 package:
   name: climate4r
-  version: 1.0
+  version: 1.1.0
 
-#build:
-#  rpaths:
-#    - lib/R/lib/
-#    - lib/
-#    - jre/lib/amd64/server/
+build:
+  rpaths:
+    - lib/R/lib/
+    - lib/
+    - jre/lib/amd64/server/
+    - jre/lib/amd64
 
 requirements:
   build:
-    - r-base==3.6.1
+    - r-base==3.6.2
     - openjdk
     - r-rjava
+    - r-devtools>=2.2
     - r-udunits2
     - r-ncdf4
+    - r-gh
+    - r-matrix>=1.2_18
+    - r-rgdal
+    - gdal
     - xorg-libxt
     - udunits2
+    - curl
   run:
-    - r-base==3.6.1
+    - r-base==3.6.2
     - openjdk
     - r-rjava
+    - r-devtools>=2.2
     - r-udunits2
     - r-ncdf4
+    - r-gh
+    - r-matrix>=1.2_18
+    - r-rgdal
+    - gdal
     - xorg-libxt
     - udunits2
+    - curl
 
 about:
   home: https://github.com/SantanderMetGroup/climate4R
