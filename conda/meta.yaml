@@ -1,45 +1,42 @@
 package:
   name: climate4r
-  version: 1.1.0
+  version: 1.3.0
 
 build:
+  script_env:
+    - GITHUB_PAT
   rpaths:
     - lib/R/lib/
     - lib/
-    - jre/lib/amd64/server/
-    - jre/lib/amd64
 
 requirements:
   build:
-    - r-base==3.6.2
-    - openjdk
+    - r-base=3.6.2=h7ed4ef7_1
     - r-rjava
-    - r-devtools>=2.2
-    - r-udunits2
-    - r-ncdf4
-    - r-gh
-    - r-matrix>=1.2_18
-    - r-rgdal
+    - openjdk=8.0.152=h7b6447c_3
     - gdal
     - xorg-libxt
     - udunits2
     - curl
-    - zstd>=1.4.4
+    - zstd
+    - libv8
+    - jq
+    - protobuf
+    - geojson
   run:
-    - r-base==3.6.2
-    - openjdk
+    - r-base=3.6.2=h7ed4ef7_1
     - r-rjava
-    - r-devtools>=2.2
-    - r-udunits2
-    - r-ncdf4
-    - r-gh
-    - r-matrix>=1.2_18
-    - r-rgdal
+    - openjdk=8.0.152=h7b6447c_3
+    - openjdk
     - gdal
     - xorg-libxt
     - udunits2
     - curl
-    - zstd>=1.4.4
+    - zstd
+    - libv8
+    - jq
+    - protobuf
+    - geojson
 
 about:
   home: https://github.com/SantanderMetGroup/climate4R
