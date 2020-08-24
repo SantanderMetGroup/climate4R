@@ -258,7 +258,7 @@ climate4R.chunk <- function(n.chunks = 10,
   if (!is.null(output.path)) {
     out <- unlist(out.ch)
   } else if (is.null(output.path) & isFALSE(chunk.horizontally)) {
-    out <- do.call("bindGrid", list(out.ch, dimension = "lat"))
+    out <- tryCatch({do.call("bindGrid", list(out.ch, dimension = "lat"))}, error = function(err) {unlist(out.ch, recursive = FALSE)})
   } else {
     stop("chunk.horizontally is not implemented for output.path = NULL yet.")
   }
