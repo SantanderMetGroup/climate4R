@@ -17,7 +17,7 @@ R --vanilla -e "install.packages('udunits2', repos='https://cloud.r-project.org/
 R --vanilla -e 'install.packages("https://cran.r-project.org/src/contrib/Archive/tree/tree_1.0-38.tar.gz")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.UDG@v0.2.0")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.java@v1.1.1")'
-R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@v1.6.1")'
+R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@v1.7.0")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.ECOMS@v1.4.6")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/transformeR@v2.0.1")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/downscaleR.keras@v0.0.2")'

@@ -4,7 +4,7 @@ USER root
 RUN apt-get update && apt-get install -y xorg git && ln -s /bin/tar /bin/gtar
 
 USER $NB_USER
-RUN conda install -y -c defaults -c conda-forge -c santandermetgroup python=3.6 climate4r=1.4.0 \
+RUN conda install -y -c defaults -c conda-forge -c santandermetgroup python=3.6 climate4r=1.4.1 \
   jupyter_contrib_nbextensions jupyter_nbextensions_configurator && \
   cp /opt/conda/lib/libgomp.so.1.0.0 /opt/conda/lib/libgomp.so
 
