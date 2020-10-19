@@ -1,4 +1,6 @@
-## conda recipe for climate4R
+## conda recipe for the climate4R core packages
+
+***NOTE!: to install the whole framework go to [conda-full](https://github.com/SantanderMetGroup/climate4R/tree/devel/conda-full)
 
 ```bash
 # create a conda environment
