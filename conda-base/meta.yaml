@@ -1,0 +1,27 @@
+package:
+  name: climate4r-base
+  version: 1.0.0
+
+build:
+  script_env:
+    - GITHUB_PAT
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base=3.6.1
+    - r-rjava
+    - openjdk
+    - curl
+    - udunits2
+  run:
+    - r-base=3.6.1
+    - r-rjava
+    - openjdk
+    - curl
+    - udunits2
+
+about:
+  home: https://github.com/SantanderMetGroup/climate4R
