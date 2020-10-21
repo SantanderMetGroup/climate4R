@@ -8,6 +8,7 @@ export LD_LIBRARY_PATH=${PREFIX}/lib:${PREFIX}/lib/server:$PREFIX/lib/R/library/
 
 R --vanilla -e 'install.packages("devtools", repos="https://cloud.r-project.org/")'
 R --vanilla -e "install.packages('udunits2', repos='https://cloud.r-project.org/', configure.args='--with-udunits2-lib=${UDUNITS2_LIB}')"
+R --vanilla -e 'install.packages("ncdf4", repos="https://cloud.r-project.org/")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR.java@v1.1.1")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/climate4R.UDG@devel")'
 R --vanilla -e 'library(devtools);install_github("SantanderMetGroup/loadeR@devel")'
