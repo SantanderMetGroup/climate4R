@@ -1,4 +1,4 @@
-#     climate4R.chunk.C3S_428.R Apply climate4R function to each loaded set of latitudes.
+#     climate4R.chunk.R Apply climate4R function to each loaded set of latitudes.
 #
 #     Copyright (C) 2017 Santander Meteorology Group (http://www.meteo.unican.es)
 #
@@ -264,4 +264,3 @@ climate4R.chunk <- function(n.chunks = 10,
   }
   return(out)
 }
-
