@@ -18,8 +18,9 @@ RUN R --vanilla -e 'install.packages("https://cran.r-project.org/src/contrib/Arc
 	R --vanilla -e 'IRkernel::installspec()'
 
 USER root 
-RUN R --vanilla -e 'IRkernel::installspec(user = FALSE)'
+RUN R --vanilla -e 'IRkernel::installspec(user = FALSE)' && \
+    mkdir -p /gpfs/ces/share-7c11c2a4-9d9f-40f5-b95e-396bcbf3f608 && \
+    mkdir -p /home/$NB_USER/shared && \
+    chown -R $NB_USER:users /gpfs /home/$NB_USER/shared && \
+    ln -s /home/$NB_USER/shared /gpfs/ces/share-7c11c2a4-9d9f-40f5-b95e-396bcbf3f608/HUB
 USER $NB_USER
-
-# $NB_USER not supported in chown, see https://github.com/moby/moby/issues/35018
-COPY --chown=jovyan:users examples /home/$NB_USER/examples
