@@ -1,5 +1,3 @@
-
-
 #     climate4R.chunk.R Apply climate4R function to each loaded set of latitudes.
 #
 #     Copyright (C) 2017 Santander Meteorology Group (http://www.meteo.unican.es)
@@ -43,114 +41,226 @@
 #'
 #' @author M. Iturbide
 #' @export
-#' @examples {
-#' source("R/climate4R.chunk.R")
-#' library(loadeR)
-#' library(transformeR)
-#' library(climate4R.climdex)
-#' 
-#' loginUDG(username = "", password = "")
-#' 
-#' z <- climate4R.chunk(n.chunks = 10,
-#'                      C4R.FUN.args = list(FUN = "climdexGrid",
-#'                                          index.code = "CWD",
-#'                                          pr = list(dataset = "WATCH_WFDEI", var = "pr")),
-#'                     loadGridData.args = list(years = 1981:2000,
-#'                                              lonLim = c(-10, 10),
-#'                                              latLim = c(36, 45)),
-#'                     output.path = NULL)
-#' library(visualizeR)
-#' spatialPlot(climatology(z))
-#'}
+
 
 climate4R.chunk <- function(n.chunks = 10,
+                            chunk.horizontally = FALSE,
                             C4R.FUN.args = list(FUN = NULL),
                             loadGridData.args = list(),
-                            output.path = NULL) {
-  
+                            output.path = NULL,
+                            filename = NULL,
+                            parallel = FALSE,
+                            max.ncores = 16,
+                            ncores = NULL) {
+  parallel.pars <- parallelCheck(parallel, max.ncores, ncores)
+  lapply_fun <- selectPar.pplyFun(parallel.pars, .pplyFUN = "lapply")
+  if (parallel.pars$hasparallel) on.exit(parallel::stopCluster(parallel.pars$cl))
   if (!is.null(output.path)) { # This option is kept for daily outputs, i.e. big arrays (e.g. bias correction)
     suppressWarnings(dir.create(output.path))
-    message("[", Sys.time(), "] Rdata will be saved in ", output.path)
+    message("[", Sys.time(), "] NetCDF-s will be saved in ", output.path)
   }
   #PREPARE DATA FOR loadGridData
   ind.data <- which(unlist(lapply(C4R.FUN.args, function(w) "dataset" %in% names(w))))
   data <- C4R.FUN.args[ind.data]
   datasets <- lapply(data, '[[',"dataset")
-  vars <- lapply(data, '[[',"var")
+  load.fun <- lapply(datasets, function(dat) {
+    if (length(suppressMessages(UDG.datasets(dat))) > 0) dat <- suppressMessages(UDG.datasets(dat, full.info = TRUE)[[1]][["url"]])
+    gds <- tryCatch({openDataset(dat)}, error = function(err) {NA})
+    nc <- tryCatch({gds$getNetcdfDataset()}, error = function(err) {NA})
+    grep.result <- tryCatch({grep("timeSeries",nc$getGlobalAttributes()$toString())}, error = function(err) {NULL})
+    gds$close()
+    gds <- nc <- NULL
+    if (length(grep.result) == 0) {
+      "loadGridData"
+    } else {
+      "loadStationData"
+    }
+  })
+  vars <- lapply(data, '[[', "var")
   lf <- list.files(file.path(find.package("climate4R.UDG")), pattern = "datasets.*.txt", full.names = TRUE)
   df.datasets <- lapply(lf, function(x) read.csv(x, stringsAsFactors = FALSE))
   df.datasets <- do.call("rbind", df.datasets)  
   origVarNames <- unlist(lapply(1:length(datasets), function(d) {
     df.sub <- df.datasets[which(df.datasets$name == datasets[[d]]), 4]
-    df.voc <- tryCatch({read.csv(file.path(find.package("climate4R.UDG"), "dictionaries", df.sub))}, error = function(err){NA})
-    tryCatch({as.character(df.voc$short_name[df.voc$identifier == vars[[d]]])}, error = function(err){NA})
+    df.voc <- tryCatch({read.csv(file.path(find.package("climate4R.UDG"), "dictionaries", df.sub))},
+                       error = function(err) {NA})
+    tryCatch({as.character(df.voc$short_name[df.voc$identifier == vars[[d]]])},
+             error = function(err) {NA})
   }))
+  df.datasets <- NULL
   origVarNames[which(is.na(origVarNames))] <- unlist(vars[which(is.na(origVarNames))])
-  ## PREPARE LATITUDE CHUNKS FOR loadGridData
+  
+  ## PREPARE CHUNKS FOR loadGridData ----------------------------------
   di <- suppressMessages(lapply(1:length(datasets), function(d) {
     ddi <- dataInventory(datasets[[d]])
     if (origVarNames[d] %in% names(ddi)) {
-      ddi[[origVarNames[d]]]
+      return(ddi[[origVarNames[d]]])
+      ddi <- NULL
     } else {
       stop("Requested variable is not in dataset")
     }
   }))
-  names(di) <- names(datasets)
-  lats <- lapply(di, function(d) d[["Dimensions"]][["lat"]][["Values"]])
-  if(is.null(loadGridData.args[["latLim"]])) loadGridData.args[["latLim"]] <- range(lats)
+  names(di) <- names(datasets) ### 172 Mb
+  lnames <- c("y", "latitude", "Latitude", "lat", "Lat")
+  lonnames <- c("x", "longitude", "Longitude", "lon", "Lon")
+  lats <- lapply(di, function(d) {
+    il <- 0
+    l <- NULL
+    while (is.null(l)) {
+      il <- il + 1
+      l <- unique(sort(d[["Dimensions"]][[lnames[il]]][["Values"]]))
+      if (il > length(lnames)) stop("Problem reading latitudes")
+    }
+    l
+  })
+  if (is.null(loadGridData.args[["latLim"]])) loadGridData.args[["latLim"]] <- range(lats)
   lats.y <- lapply(1:length(lats), function(y) lats[[y]][which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][1]))[1]:(min(c(length(lats[[y]]),which.min(abs(lats[[y]] - loadGridData.args[["latLim"]][2]))[1] + 1)))])
-  nmax.chunks <- unlist(lapply(lats.y, length))[1]
-  if (n.chunks > ceiling(nmax.chunks/2)) {
-    warning("n.chunks (", n.chunks, ") is too many. n.chunks set to ", ceiling(nmax.chunks/2))
-    n.chunks <- ceiling(nmax.chunks/2)
+  nmax.lat.chunks <- unlist(lapply(lats.y, length))[1]
+  if (chunk.horizontally) {
+    n.chunks.per.axis <- ceiling(sqrt(n.chunks))
+  } else {
+    n.chunks.per.axis <- n.chunks
   }
+  if (n.chunks.per.axis > nmax.lat.chunks) {
+    warning("Defined n.chunks (", n.chunks, ") > total number of latitudes. Set to ", nmax.lat.chunks)
+    n.chunks.per.axis <- nmax.lat.chunks
+  }
+  #Prepare lat chunking
   n.lats.y <- lapply(lats.y, length)
-  n.lat.chunk <- lapply(n.lats.y, function(y) ceiling(y/n.chunks))
-  aux.ind <- lapply(n.lat.chunk, function(ch) rep(1:(n.chunks - 1), each = ch))
-  ind <- lapply(1:length(aux.ind), function(i) {
-   indi <- aux.ind[[i]][1:n.lats.y[[i]]]
-   indi[which(is.na(indi))] <- max(indi, na.rm = TRUE) + 1
-   indi
-   })
-   # ind <- lapply(1:length(aux.ind), function(i) c(aux.ind[[i]], rep((max(aux.ind[[i]]) + 1), each = n.lats.y[[i]] - length(aux.ind[[i]]))))
+  n.lat.per.chunk <- lapply(n.lats.y, function(y) ceiling(y/n.chunks.per.axis))
+  ind <- lapply(1:length(n.lat.per.chunk), function(ch) rep(1:(n.chunks.per.axis), each = n.lat.per.chunk[[ch]], length.out = n.lats.y[[ch]]))
   lat.list <- lapply(1:length(ind), function(ch) split(lats.y[[ch]], f = ind[[ch]]))
-  lat.range.chunk <- lapply(lat.list, function(ch) lapply(ch, range))
-  # lat.range.chunk.x <- lapply(lat.range.chunk, function(ch) lapply(ch, function(x) x + c(-3, 3)))
+  lat.range.chunk <- lapply(lat.list, function(ch) 
+    lapply(ch, function(r){
+      ran <- range(r)
+      if ((ran[2] - ran[1]) == 0) ran <- ran[1]
+      ran
+    })) ### 172 Mb
+  lons <- lapply(di, function(d) {
+    il <- 0
+    l <- NULL
+    while (is.null(l)) {
+      il <- il + 1
+      l <- unique(sort(d[["Dimensions"]][[lonnames[il]]][["Values"]]))
+      if (il > length(lonnames)) stop("Problem reading longitudes")
+    }
+    l
+  })
+  if (chunk.horizontally) {
+    if (is.null(loadGridData.args[["lonLim"]])) loadGridData.args[["lonLim"]] <- range(lons)
+    lons.y <- lapply(1:length(lons), function(y) lons[[y]][which.min(abs(lons[[y]] - loadGridData.args[["lonLim"]][1]))[1]:(min(c(length(lons[[y]]),which.min(abs(lons[[y]] - loadGridData.args[["lonLim"]][2]))[1] + 1)))])
+    nmax.lon.chunks <- unlist(lapply(lons.y, length))[1]
+    if (n.chunks.per.axis > nmax.lon.chunks) {
+      warning("Defined n.chunks (", n.chunks, ") > total number of longitudes. Set to ", nmax.lon.chunks)
+      n.chunks.per.axis <- nmax.lon.chunks
+    }
+    #Prepare lon chunking
+    n.lons.y <- lapply(lons.y, length)
+    n.lon.per.chunk <- lapply(n.lons.y, function(y) ceiling(y/n.chunks.per.axis))
+    ind <- lapply(1:length(n.lon.per.chunk), function(ch) rep(1:(n.chunks.per.axis), each = n.lon.per.chunk[[ch]], length.out = n.lons.y[[ch]]))
+    lon.list <- lapply(1:length(ind), function(ch) split(lons.y[[ch]], f = ind[[ch]]))
+    lon.range.chunk <- lapply(lon.list, function(ch) lapply(ch, function(r) {
+      ran <- range(r)
+      if ((ran[2] - ran[1]) == 0) ran <- ran[1]
+      ran
+    })) ### 172 Mb
+  } else {
+    n.lons.y <- length(lons[[1]])
+    n.lon.per.chunk <- length(lons[[1]])
+    lon.range.chunk <- list(list(NULL))
+  }
+  # Additional collocation arguments
   lGD.args.aux <- loadGridData.args
   loadGridData.args <- NULL
   ## PREPARE ARG LIST for loadGridData FOR EACH CHUNK  
   lGD.args.aux <- lapply(data, function(d) c(d, lGD.args.aux))
   lGD.args.chunk <- lapply(lat.range.chunk[[1]], function(ch) { # [[1]] considers the latitudes of the first dataset (need to think about this for future code modifications, e.g. for applying biasCorrection).
-    lapply(lGD.args.aux, function(d) {
-      d[["latLim"]] <- ch
-      d
+    lapply(lon.range.chunk[[1]], function(lonch){
+      lapply(lGD.args.aux, function(d) {
+        d[["latLim"]] <- ch
+        d[["lonLim"]] <- lonch
+        d
+      })
     })
   })
-  #LOOP FOR LOADING AND APPLYING THE C4R FUNCTION 
+  lGD.args.chunk <- unlist(lGD.args.chunk, recursive = FALSE)
+  #LOOP FOR LOADING AND APPLYING THE C4R FUNCTION ### 172 Mb
   ind.FUN <- which(names(C4R.FUN.args) == "FUN")
   if (length(ind.FUN) != 1) stop("FUN argument required in C4R.FUN.args")
-  message("[", Sys.time(), "] y contains ", n.lats.y[[1]], " latitudes. ", C4R.FUN.args[[ind.FUN]],  " will be applied in ", n.chunks, " chunks of about ", n.lat.chunk[[1]], " latitudes.")
-  out.ch <- lapply(1:length(lGD.args.chunk), function(i) {
-    chunk.i <- lapply(lGD.args.chunk[[i]], function(d) do.call("loadGridData", d))
-    C4R.FUN.args[ind.data] <- chunk.i
-    C4R.chunk.output <- do.call(C4R.FUN.args[[ind.FUN]], C4R.FUN.args[-ind.FUN])
-    if (!is.null(output.path)) {
-      ni <- as.character(i)
-      ndigits <-  nchar(length(lGD.args.chunk))
-      if (nchar(i) < ndigits) ni <- paste0(paste0(rep("0", (ndigits - nchar(i))), collapse = ""), ni)
-      save(C4R.chunk.output, 
-           file = paste0(output.path, "/", paste(unlist(C4R.FUN.args[-ind.data]), collapse = "_"), "_chunk", ni, ".rda"))
-      paste0(output.path, "/", paste(unlist(C4R.FUN.args[-ind.data]), collapse = "_"), "_chunk_", ni, ".rda")
-    } else {
-      C4R.chunk.output
+  message("[", Sys.time(), "] y contains ", n.lats.y[[1]], " latitudes, and ",  n.lons.y[[1]], " longitudes.",  C4R.FUN.args[[ind.FUN]],  " will be applied in ", length(lGD.args.chunk), " chunks of about ", n.lat.per.chunk[[1]], " latitudes and ", n.lon.per.chunk[[1]], " longitudes.")
+  # mem_used <- vector("numeric", length = (length(lGD.args.chunk)*2))
+  # object.size(lGD.args.chunk)
+  # l <- lapply(1:length(lGD.args.chunk), function(i) { 
+  ## MEMORY INTENSIVE PART -----------------------------------------------------
+  out.ch <- lapply_fun(1:length(lGD.args.chunk), function(i) {
+    C4R.args <- C4R.FUN.args
+    # print(object.size(lGD.args.chunk), units = "Mb")
+    # chunk.i <- vector(mode = "list", length = length(lGD.args.chunk[[i]]))
+    # names(chunk.i) <- names(lGD.args.chunk[[i]])
+    
+    # object.size(chunk.i) %>% print(units = "Mb")
+    
+    chunk.args <- lGD.args.chunk[[i]]
+    lGD.args.chunk[[i]] <- NA
+    # for (d in 1:length(chunk.args)) {
+    #   chunk.i[[d]] <- do.call(load.fun[[d]], chunk.args[[d]])
+    # }
+    # object.size(chunk.i) %>% print(units = "Mb")
+    chunk.i <- lapply(1:length(chunk.args), function(d) do.call(load.fun[[d]], chunk.args[[d]])) ### 263 Mb
+    if (!any(unlist(lapply(chunk.i, is.null)))) { # Ignore areas without stations
+      names(chunk.i) <- names(chunk.args)
+      mess <- utils:::format.object_size(object.size(chunk.i), "auto")
+      # message("Chunk ", i, " / max object size: ", do.call("max", lapply(chunk.i, object.size)))
+      message("Chunk ", i, " / total loaded size: ", mess)
+      gc(verbose = FALSE)
+      # mem_used[i] <- pryr::mem_used() # Memory profiling
+      if (is.null(filename)) {
+        if ("y" %in% names(chunk.i) & "x" %in% names(chunk.i)) {
+          if (is.null(chunk.i[["newdata"]])) {
+            filename <- strsplit(attr(chunk.i[["x"]], "dataset"), "/")
+          } else {
+            filename <- strsplit(attr(chunk.i[["newdata"]], "dataset"), "/")
+          }
+          # gsub(" ", "-", paste(names(C4R.FUN.args[-ind.data]), C4R.FUN.args[-ind.data], collapse = "_"))
+          filename <- gsub(".nc.*", "_bc", filename[[1]][length(filename[[1]])])
+        } else {
+          filename <- strsplit(attr(chunk.i[[1]], "dataset"), "/")
+          filename <- gsub(".nc.*", "", filename[[1]][length(filename[[1]])])
+        }
+      }
+      C4R.args[ind.data] <- chunk.i
+      chunk.i <- NULL
+      gc(verbose = FALSE)
+      C4R.chunk.output <- do.call(C4R.args[[ind.FUN]], C4R.args[-ind.FUN])
+      C4R.args <- NULL
+      gc(verbose = FALSE) ## 223 Mb (top desfasado en 1.5 Gb)
+      
+      
+      if (!is.null(output.path)) {
+        write.fun <- "grid2nc"
+        if (attr(C4R.chunk.output[["xyCoords"]], "resX") == 0) write.fun <- "stations2nc"
+        ni <- as.numeric(unlist(strsplit(names(lGD.args.chunk)[i], "\\.")))
+        ni <- paste(sprintf("%03d", ni), collapse = "_")
+        do.call(write.fun, list(data = C4R.chunk.output, NetCDFOutFile = paste0(output.path, "/", filename, "_chunk", ni, ".nc")))
+        C4R.chunk.output <- NULL
+        gc(verbose = FALSE)
+        paste0(output.path, "/", filename, "_chunk", ni, ".nc")
+      } else {
+        gc(verbose = FALSE)
+        C4R.chunk.output
+      }
     }
-  })
+    # return(mem_used)
+  })#)### 180 Mb (1.125 Gb)
+  lGD.args.chunk <- NULL
+  gc(verbose = FALSE)
   # RETURN
   if (!is.null(output.path)) {
     out <- unlist(out.ch)
+  } else if (is.null(output.path) & isFALSE(chunk.horizontally)) {
+    out <- tryCatch({do.call("bindGrid", list(out.ch, dimension = "lat"))}, error = function(err) {unlist(out.ch, recursive = FALSE)})
   } else {
-    out <- do.call("bindGrid", list(out.ch, dimension = "lat"))
+    stop("chunk.horizontally is not implemented for output.path = NULL yet.")
   }
   return(out)
 }
-

@@ -1,0 +1,55 @@
+package:
+  name: climate4r
+  version: 1.4.1
+
+build:
+  script_env:
+    - GITHUB_PAT
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+requirements:
+  build:
+    - r-base=3.6.1
+    - r-rjava
+    - openjdk
+    - gdal>=3
+    - poppler
+    - xorg-libxt
+    - udunits2
+    - curl
+    - zstd
+    - libv8
+    - jq
+    - protobuf
+    - geojson
+    - libiconv
+    - geojsonio
+    - proj4
+    - pkg-config
+    - libiconv
+    - libgomp
+  run:
+    - r-base=3.6.1
+    - r-rjava
+    - openjdk
+    - gdal>=3
+    - poppler
+    - xorg-libxt
+    - udunits2
+    - curl
+    - zstd
+    - libv8
+    - jq
+    - protobuf
+    - geojson
+    - libiconv
+    - geojsonio
+    - proj4
+    - pkg-config
+    - libiconv
+    - libgomp
+
+about:
+  home: https://github.com/SantanderMetGroup/climate4R
