@@ -36,7 +36,7 @@ Write http://firstchoice:8888/ or http://secondchoice:8888/ in your browser and 
 ### Build (only for the admin)
 
 ```bash
-docker build -t santandermetgroup/climate4r:latest . < Dockerfile
+docker build -t santandermetgroup/climate4r:latest -f Dockerfile .
 docker login
 docker push santandermetgroup/climate4r:latest
 ```
