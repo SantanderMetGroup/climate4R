@@ -2,7 +2,7 @@ channels:
 - conda-forge
 - r
 dependencies:
-- r-base=3.6
+# r-base=3.6
 - r-rjava
 - r-gdalutils
 - r-akima
