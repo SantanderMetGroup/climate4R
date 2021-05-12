@@ -4,6 +4,7 @@ channels:
   - r 
   - defaults
 dependencies:
+  - nbgitpuller
   - r-base=3.6
   - r-caret=6.0
   - r-dismo=1.3
