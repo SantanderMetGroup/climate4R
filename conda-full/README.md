@@ -6,6 +6,8 @@ conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5
 
 ## Build (only for the admin)
 
+Use mambabuild, see below.
+
 ```bash
 conda build -c conda-forge -c r -c defaults .
 anaconda login
