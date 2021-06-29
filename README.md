@@ -62,7 +62,7 @@ conda activate climate4R
 In this environment, install `climate4R` by issuing:
 
 ```bash
-conda install -c defaults -c r -c conda-forge -c santandermetgroup climate4r
+conda install -c conda-forge -c r -c defaults -c santandermetgroup climate4r
 ```
 
 Activate the conda environment to work with climate4R. Deactivate the environment with:
@@ -85,7 +85,7 @@ Individual packages can be installed directly from the github sources.
                  "SantanderMetGroup/downscaleR"))
 ```
 
-### NOTE: installation of specific package versions
+#### NOTE: installation of specific package versions
 
 In case a particular paper notebook is to be replicated, the installation of specific version tags can be done by just explicitly indicating the tag number in the repo name. For example:
 
