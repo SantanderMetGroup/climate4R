@@ -8,7 +8,7 @@ conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5
 _Note for jupyter notebook users_: From a dedicated environment, to run notebooks using climate4R include it as:
 
 ```
-conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.0 jupyter
+conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.0 jupyter r-irkernel
 ```
 
 in order to include jupyter notebooks in your newly created environment
