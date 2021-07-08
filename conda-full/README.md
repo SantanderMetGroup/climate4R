@@ -38,5 +38,6 @@ conda install mamba -n base -c conda-forge
 Build:
 
 ```bash
-conda mambabuild -c conda-forge -c r -c defaults .
+rm -rf ${HOME}/miniconda3/conda-bld/src_cache
+conda mambabuild -c conda-forge -c r -c defaults . &>log &
 ```
