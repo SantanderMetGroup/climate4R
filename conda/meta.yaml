@@ -1,0 +1,58 @@
+package:
+  name: climate4r
+  version: 1.5.2
+
+source:
+  url: file://{{ RECIPE_DIR }}/install.R
+
+requirements:
+  build:
+  - iris
+
+  - r-base>=3.6
+  - r-climate4r.udg
+  - r-loader.java
+  - r-loader
+  - r-loader.ecoms
+  - r-transformer
+  - r-downscaler
+  - r-downscaler.keras
+  - r-visualizer
+  - r-convertr
+  - r-geoprocessor
+  - r-climate4r.climdex
+  - r-climate4r.indices
+  - r-loader.2nc
+  - r-firedanger
+  - r-value
+  - r-climate4r.value
+  - r-mopa
+  - r-drought4r
+  - r-climate4r.datasets
+
+  run:
+  - iris
+
+  - r-base>=3.6
+  - r-climate4r.udg
+  - r-loader.java
+  - r-loader
+  - r-loader.ecoms
+  - r-transformer
+  - r-downscaler
+  - r-downscaler.keras
+  - r-visualizer
+  - r-convertr
+  - r-geoprocessor
+  - r-climate4r.climdex
+  - r-climate4r.indices
+  - r-loader.2nc
+  - r-firedanger
+  - r-value
+  - r-climate4r.value
+  - r-mopa
+  - r-drought4r
+  - r-climate4r.datasets
+
+about:
+  home: https://github.com/SantanderMetGroup/climate4R

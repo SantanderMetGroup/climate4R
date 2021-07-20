@@ -2,4 +2,4 @@
 
 set -e
 
-Rscript install.R
+#Rscript install.R

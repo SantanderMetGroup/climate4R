@@ -1,14 +1,14 @@
 # conda recipe for climate4R
 
 ```bash
-conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.1
+conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.2
 ```
 
 ***
 _Note for jupyter notebook users_: From a dedicated environment, to run notebooks using climate4R include it as:
 
 ```
-conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.1 jupyter r-irkernel
+conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.2 jupyter r-irkernel
 ```
 
 in order to include jupyter notebooks in your newly created environment
@@ -39,5 +39,5 @@ Build:
 
 ```bash
 rm -rf ${HOME}/miniconda3/conda-bld/src_cache
-conda mambabuild -c conda-forge -c r -c defaults . &>log &
+conda mambabuild -c santandermetgroup -c conda-forge -c r -c defaults . &>log &
 ```
