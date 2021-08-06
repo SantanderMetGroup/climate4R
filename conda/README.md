@@ -1,28 +1,28 @@
-# conda recipe for climate4R
+# Conda recipe for climate4R metapackage
+
+## Installing climate4R conda metapackage
 
 ```bash
-conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.2
+conda install -c conda-forge -c r -c defaults -c santandermetgroup  r-climate4r
 ```
 
 ***
 _Note for jupyter notebook users_: From a dedicated environment, to run notebooks using climate4R include it as:
 
-```
-conda install -c santandermetgroup -c conda-forge -c r -c defaults climate4r=1.5.2 jupyter r-irkernel
+```bash
+conda install -c conda-forge -c r -c defaults -c santandermetgroup  r-climate4r
+ jupyter r-irkernel
 ```
 
 in order to include jupyter notebooks in your newly created environment
-
 ***
 
-## Build (only for the admin)
-
-Use mambabuild, see below.
+## Building climate4R conda metapackage
 
 ```bash
-conda build -c conda-forge -c r -c defaults .
+conda build -c conda-forge -c r -c defaults -c santandermetgroup .
 anaconda login
-anaconda upload -u SantanderMetGroup TAR_BZ2
+anaconda upload -u SantanderMetGroup PATH_TO_TAR_BZ2
 ```
 
 ## ToDo, explore mamba and boa
@@ -39,5 +39,5 @@ Build:
 
 ```bash
 rm -rf ${HOME}/miniconda3/conda-bld/src_cache
-conda mambabuild -c santandermetgroup -c conda-forge -c r -c defaults . &>log &
+conda mambabuild -c conda-forge -c r -c defaults -c santandermetgroup . &>log &
 ```

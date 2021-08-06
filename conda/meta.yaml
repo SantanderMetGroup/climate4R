@@ -1,58 +1,44 @@
 package:
-  name: climate4r
-  version: 1.5.2
-
-source:
-  url: file://{{ RECIPE_DIR }}/install.R
-
+  name: r-climate4r
+  version: 2.5.3
+build:
+  number: 0
+  noarch: generic
 requirements:
-  build:
-  - iris
-
-  - r-base>=3.6
-  - r-climate4r.udg
-  - r-loader.java
-  - r-loader
-  - r-loader.ecoms
-  - r-transformer
-  - r-downscaler
-  - r-downscaler.keras
-  - r-visualizer
-  - r-convertr
-  - r-geoprocessor
-  - r-climate4r.climdex
-  - r-climate4r.indices
-  - r-loader.2nc
-  - r-firedanger
-  - r-value
-  - r-climate4r.value
-  - r-mopa
-  - r-drought4r
-  - r-climate4r.datasets
-
+  build: []
   run:
-  - iris
-
-  - r-base>=3.6
-  - r-climate4r.udg
-  - r-loader.java
-  - r-loader
-  - r-loader.ecoms
-  - r-transformer
-  - r-downscaler
-  - r-downscaler.keras
-  - r-visualizer
-  - r-convertr
-  - r-geoprocessor
-  - r-climate4r.climdex
-  - r-climate4r.indices
-  - r-loader.2nc
-  - r-firedanger
-  - r-value
-  - r-climate4r.value
-  - r-mopa
-  - r-drought4r
-  - r-climate4r.datasets
+  #r dependencies
+  - r-base ==3.6.3
+  - r-climate4r.udg ==0.2.3
+  - r-loader.java ==1.1.1
+  - r-loader ==1.7.1
+  - r-loader.ecoms ==1.4.6
+  - r-transformer ==2.1.3
+  - r-downscaler ==3.3.3
+  - r-downscaler.keras ==1.0.0
+  - r-visualizer ==1.6.1
+  - r-convertr ==0.2.0
+  - r-geoprocessor ==0.2.0
+  - r-climate4r.climdex ==0.2.2
+  - r-climate4r.indices ==0.2.0
+  - r-loader.2nc ==0.1.2
+  - r-firedanger ==1.1.0
+  - r-value ==2.2.1
+  - r-climate4r.value ==0.0.2
+  - r-mopa ==1.0.0
+  - r-drought4r ==0.2.0
+  - r-climate4r.datasets ==0.0.1
+  #python dependencies
+  - python ==3.7.11
+  - iris ==3.0.4
 
 about:
-  home: https://github.com/SantanderMetGroup/climate4R
+  home: http://www.meteo.unican.es/climate4r
+  license: GPL-3.0-or-later
+  summary: Climate4R Framework
+  license_family: GPL3
+
+extra:
+  recipe-maintainers:
+    - conda-forge/r
+    - cofinoa
