@@ -2,13 +2,13 @@ package:
   name: r-climate4r
   version: 2.5.3
 build:
-  string: r36_0
+  string: r36_1
   noarch: generic
 requirements:
   build: []
   run:
   #r dependencies
-  - r-base ==3.6.3
+  - r-base >=3.6.3,<3.7
   - r-climate4r.udg ==0.2.3
   - r-loader.java ==1.1.1
   - r-loader ==1.7.1
@@ -29,7 +29,7 @@ requirements:
   - r-drought4r ==0.2.0
   - r-climate4r.datasets ==0.0.1
   #python dependencies
-  - python ==3.7.11
+  - python >=3.7,<3.8
   - iris ==3.0.4
 
 about:
