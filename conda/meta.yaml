@@ -2,7 +2,7 @@ package:
   name: r-climate4r
   version: 2.5.3
 build:
-  number: 0
+  string: r36_0
   noarch: generic
 requirements:
   build: []
