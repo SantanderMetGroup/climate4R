@@ -1,7 +1,6 @@
+# Dockerfile
 
-## Dockerfile containing all required software to work with climate4R in jupyter
-
-This Dockerfile is the basis of the climate4r [Docker](https://www.docker.com/why-docker), where `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks are already installed. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
+This Dockerfile is the basis of the climate4R [Docker](https://www.docker.com/why-docker), where `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks are already installed. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA (CSIC-UC) Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
 ## Instructions to start working with the climate4R Docker
 
@@ -17,7 +16,7 @@ $ sudo usermod -aG docker your-user
 
 Finally, "logout" and "login" again.
 
-Find more information about docker at [https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b)
+Find more information about docker at [this freeCodeCamp entry](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b)
 
 ### Pull and run the climate4r Docker image
 
@@ -33,7 +32,7 @@ http://(firstchoice or secondchoice):8888/
 
 Write http://firstchoice:8888/ or http://secondchoice:8888/ in your browser and start working with climate4R in jupyter!
 
-### Build (only for the admin)
+## Build (only for the admin)
 
 ```bash
 docker build -t santandermetgroup/climate4r:latest -f Dockerfile .
