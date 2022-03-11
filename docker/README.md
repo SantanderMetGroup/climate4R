@@ -34,8 +34,11 @@ Write http://firstchoice:8888/ or http://secondchoice:8888/ in your browser and 
 
 ## Build (only for the admin)
 
+- Docker image for jupyter uses python 3.7 version due to climate4R dependencies.
+- This is the docker version of the IPCC hub. Do not consider this a climate4R docker, the IPCC hub has a very particular environment and specific user requirements.
+
 ```bash
-docker build -t santandermetgroup/climate4r:latest -f Dockerfile .
+docker build -t santandermetgroup/hubipcc:${VERSION} -f Dockerfile .
 docker login
-docker push santandermetgroup/climate4r:latest
+docker push santandermetgroup/hubipcc:${VERSION}
 ```
