@@ -21,21 +21,35 @@
 #' function is applied to it. 
 #'
 #' @param n.chunks number of latitude chunks over which iterate
+#' @param chunk.horizontally Logical (default to FALSE) for the additional chunking of the longitudinal dimension.
 #' @param C4R.FUN.args list of arguments being the name of the C4R function (character)
 #' the first. The rest of the arguments are those passed to the selected C4R function. 
 #' This list is passed to function \link{\code{do.call}} internally. For the parameters 
 #' (of a particular C4R function) where data (grids) need to be provided, here, a list of 2 
 #' arguments are passed (instead of a grid): \code{list(dataset = "", var = "")}.
-#' @param loadGridData.args list of collocation arguments passed to function loadGridData.
-#' @param output.path Optional. Path where the results of each iteration will be saved (*.rda). 
+#' @param loadGridData.args list of collocation arguments passed to function \code{loadGridData}.
+#' @param output.path Optional. Path where the results of each iteration will be saved as NetCDFs. 
 #' Useful when the amount of data after the C4R function application is large, i.e. similar
 #' to the pre-processed data (e.g. when the \link{\code{biasCorrection}} function is applied.)
+#' @param parallel Logical. Should parallel execution be used? 
+#' @param max.ncores Integer Upper bound for user-defined number of cores.
+#' @param ncores Integer number of cores used in parallel computation. Self-selected number of cores is used when 
+#' ncpus = NULL (the default), or when maxcores exceeds the default ncores value.
 #' @details Note that the appropriate libraries need to be loaded before applying this function. Packages
 #' \code{loadeR} and \code{transformeR} are always needed. Depending on the C4R function that 
 #' is applied the will also be needed to load the corresponding package/s.
 #' etc.)
-#' @return If \code{output.path} is NULL a grid containing all latitudes is returned. If \code{output.path}
-#' is provided *.rda objects for each latitude chunk are saved in the specified path.
+#' 
+#' The \code{output.path} parameter for exporting NetCDFs of each iteration is the solution to processes where 
+#' the amount of data after the C4R function application remains large. As a collection of NetCDFs are created,
+#' a catalog (ncml) can be created (see function \code{makeAggregatedDataset} from package \code{loadeR} to access 
+#' the complete dataset using the collocation arguments of function \code{loadGridData}).
+#' 
+#' @return If \code{output.path} is NULL a spatially re-binded grid containing all latitudes and longitudes is returned. 
+#' If \code{output.path} is provided, NetCDFs of each latitude chunk (latitude and longitude chunk if \code{chunk.horizontally} 
+#' is set as TRUE) are created in the specified path.
+#' 
+#' 
 #' @family climate4R
 #' 
 #'
