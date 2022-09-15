@@ -62,7 +62,7 @@ conda activate climate4R
 In this environment, install `climate4R` by issuing:
 
 ```bash
-conda install -c conda-forge -c r -c defaults -c santandermetgroup climate4r
+mamba install -y -c conda-forge -c r -c defaults -c santandermetgroup r-climate4r
 ```
 
 Activate the conda environment to work with climate4R. Deactivate the environment with:
