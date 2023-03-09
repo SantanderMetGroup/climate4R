@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y xorg git wget && \
 
 USER $NB_USER
 RUN conda install mamba -y -n base -c conda-forge && \
-    mamba install -y -n base xarray pandas matplotlib cartopy netcdf4 cftime dask iris zarr s3fs h5py gcsfs \
+    mamba install -y -n base xarray pandas matplotlib cartopy netcdf4 cftime dask iris zarr s3fs h5py gcsfs siphon \
     nco cdo jupyter_contrib_nbextensions jupyter_nbextensions_configurator jupyter beautifulsoup4 \
     # this tensorflow is for the climate4R + tensorflow environment
     # installed here due to reticulate looking for python in the default env
@@ -39,7 +39,7 @@ RUN conda create -n fao && \
         r-climate4R.indices r-rnaturalearth r-rnaturalearthdata r-leafsync \
         r-parallelly r-dtplyr r-mapview r-patchwork r-RColorBrewer r-glue \
         r-sf r-rgeos r-rgdal r-systemfonts r-terra r-lwgeom r-svglite r-satellite r-zip r-mapview r-dplyr r-shiny r-leafpop \
-        r-plotly r-broom r-loadeR.2nc r-ggnewscale r-shiny && \
+        r-plotly r-broom r-loadeR.2nc r-ggnewscale r-shiny r-geojsonio && \
     R --vanilla -e 'install.packages("leaflegend", repos="http://cran.us.r-project.org")' && \
     R --vanilla -e 'install.packages("oceanis", repos="http://cran.us.r-project.org")' && \
     R --vanilla -e 'library(devtools); devtools::install_github("ropensci/rnaturalearthhires")' && \
