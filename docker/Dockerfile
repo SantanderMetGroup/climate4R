@@ -42,6 +42,7 @@ RUN conda create -n fao && \
         r-plotly r-broom r-loadeR.2nc r-ggnewscale r-shiny r-geojsonio && \
     R --vanilla -e 'install.packages("leaflegend", repos="http://cran.us.r-project.org")' && \
     R --vanilla -e 'install.packages("oceanis", repos="http://cran.us.r-project.org")' && \
+    R --vanilla -e 'install.packages("CopernicusMarine", repos="http://cran.us.r-project.org")' && \
     R --vanilla -e 'library(devtools); devtools::install_github("ropensci/rnaturalearthhires")' && \
     R --vanilla -e 'IRkernel::installspec(name = "fao", displayname = "FAO")'
 
