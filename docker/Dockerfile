@@ -30,8 +30,8 @@ RUN conda create -n $ENVNAME && \
 
 # create conda env for FAO due to custom packages
 # oceanis for FAO users requires: r-sf r-systemfonts r-terra r-lwgeom r-svglite r-satellite r-zip r-mapview r-dplyr r-shiny r-leafpop
-RUN conda create -n fao && \
-    source /opt/conda/bin/activate fao && \
+RUN conda create -n cava && \
+    source /opt/conda/bin/activate cava && \
     mamba install -y -c conda-forge -c r -c defaults -c santandermetgroup \
         nco cdo jupyter_contrib_nbextensions jupyter_nbextensions_configurator r-irkernel r-devtools \
         r-downscaleR r-abind r-loadeR r-transformeR r-geoprocessoR r-raster \
@@ -44,7 +44,7 @@ RUN conda create -n fao && \
     R --vanilla -e 'install.packages("oceanis", repos="http://cran.us.r-project.org")' && \
     R --vanilla -e 'install.packages("CopernicusMarine", repos="http://cran.us.r-project.org")' && \
     R --vanilla -e 'library(devtools); devtools::install_github("ropensci/rnaturalearthhires")' && \
-    R --vanilla -e 'IRkernel::installspec(name = "fao", displayname = "FAO")'
+    R --vanilla -e 'IRkernel::installspec(name = "cava", displayname = "CAVA Analytics")'
 
 # climate4R + tensorflow for deep learning
 COPY c4r-tf.yml c4r-tf.yml
