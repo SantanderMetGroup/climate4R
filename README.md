@@ -3,7 +3,7 @@
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SantanderMetGroup/climate4r/devel)
 
-`climate4R` is a bundle of R packages for transparent climate data access, post-processing (including data collocation and bias correction / downscaling) and visualization. `climate4R` builds on two main data structures (grid and station, including metadata) to deal with gridded and point data from observations, reanalysis, seasonal forecasts and climate projections. It considers ensemble members as a basic dimension of the data structures. Moreover, `climate4R` is transparently (and remotely) connected to the Santander Climate Data Gateway, offering several state-of-the-art datasets (including CMIP5 and CORDEX subsets).
+`climate4R` is a bundle of R packages for transparent climate data access, post-processing (including data collocation and bias correction / downscaling) and visualization. `climate4R` builds on two main data structures (grid and station, including metadata) to deal with gridded and point data from observations, reanalysis, seasonal forecasts and climate projections. It considers ensemble members as a basic dimension of the data structures. Moreover, `climate4R` is transparently (and remotely) connected to the Santander Climate Data Gateway, offering several state-of-the-art datasets (including CMIP5 and CORDEX subsets). `climate4R` is also the main "engine" of [CAVAanalytics](https://risk-team.github.io/CAVAanalytics/), an R package developed by FAO and the University of Cantabria, offering a consistent framework to analyse and visualize multi-model ensembles with easy access to CORDEX-CORE models and reanalyses datasets. 
 
 * `climate4R` is formed by the following four core packages (all in GitHub): [`loadeR`](https://github.com/SantanderMetGroup/loadeR) , [`transformeR`](https://github.com/SantanderMetGroup/transformeR), [`downscaleR`](https://github.com/SantanderMetGroup/downscaleR) and [`visualizeR`](https://github.com/SantanderMetGroup/visualizeR). These packages are fully documented in the corresponding GitHub wikis.
 
@@ -12,6 +12,8 @@
 * Compatibility with some external packages has been achieved by wrapping packages, thus enhancing `climate4R` with new functionalities (e.g. ETCCDI extreme climate indices via the [`climdex`](https://github.com/pacificclimate/climdex.pcic) package). 
 
 * Semantic provenance (metadata) information for `climate4R` products can be generated using [METACLIP](http://www.metaclip.org) via the [`metaclipR`](https://github.com/metaclip/metaclipR) package.
+
+*  `climate4R` is the main "engine" of [CAVAanalytics](https://risk-team.github.io/CAVAanalytics/), an R package that applies `climate4R` functionalities with a `tidyverse` twist, leveraging easy access to CORDEX-CORE models, processing, and visualization capabilities.
 
 * [Conda](https://github.com/SantanderMetGroup/climate4R/tree/master/conda) and [docker](https://github.com/SantanderMetGroup/climate4R/tree/master/docker) `climate4R` installations available. The [docker](https://www.docker.com/why-docker) file also includes the [jupyter](https://jupyter.readthedocs.io/en/latest) framework. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
