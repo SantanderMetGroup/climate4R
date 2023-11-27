@@ -1,7 +1,6 @@
+# Dockerfile
 
-## Dockerfile containing all required software to work with climate4R in jupyter
-
-This Dockerfile is the basis of the climate4r [Docker](https://www.docker.com/why-docker), where `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks are already installed. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
+This Dockerfile is the basis of the climate4R [Docker](https://www.docker.com/why-docker), where `climate4R` and [jupyter](https://jupyter.readthedocs.io/en/latest) frameworks are already installed. This is the base layer for the **climate4R Hub** (a cloud-based computing facility to run `climate4R` notebooks at [IFCA (CSIC-UC) Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science)).
 
 ## Instructions to start working with the climate4R Docker
 
@@ -17,7 +16,7 @@ $ sudo usermod -aG docker your-user
 
 Finally, "logout" and "login" again.
 
-Find more information about docker at [https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b)
+Find more information about docker at [this freeCodeCamp entry](https://medium.freecodecamp.org/a-beginner-friendly-introduction-to-containers-vms-and-docker-79a9e3e119b)
 
 ### Pull and run the climate4r Docker image
 
@@ -33,10 +32,13 @@ http://(firstchoice or secondchoice):8888/
 
 Write http://firstchoice:8888/ or http://secondchoice:8888/ in your browser and start working with climate4R in jupyter!
 
-### Build (only for the admin)
+## Build (only for the admin)
+
+- Docker image for jupyter uses python 3.7 version due to climate4R dependencies.
+- This is the docker version of the IPCC hub. Do not consider this a climate4R docker, the IPCC hub has a very particular environment and specific user requirements.
 
 ```bash
-docker build -t santandermetgroup/climate4r:latest -f Dockerfile .
+docker build -t santandermetgroup/hubipcc:${VERSION} -f Dockerfile .
 docker login
-docker push santandermetgroup/climate4r:latest
+docker push santandermetgroup/hubipcc:${VERSION}
 ```

@@ -48,7 +48,32 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
 
 ## Installation
 
+The `climate4R` framework relies on a wealth of other R packages and bindings to third-party libraries. Therefore, the recommended installation is through the conda package below, which ensures the proper installation of all dependencies.
+
+### Installation using miniconda:
+
+[Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a free minimal installer for conda. The [conda recipe](conda) installs an up-to-date version of the different packages composing the `climate4R` framework, along with the associated library dependencies (udunits, openjdk, netcdf Java etc.), avoiding potential problems like the R-java configuration etc. Note that the appropriate miniconda distribution must be installed (go to the [miniconda installers page](https://docs.conda.io/en/latest/miniconda.html)) before running the following commands. We recommend starting from a clean environment (named climate4R in this example):
+
+```bash
+conda create --name climate4R
+conda activate climate4R
+```
+
+In this environment, install `climate4R` by issuing:
+
+```bash
+mamba install -y -c conda-forge -c r -c defaults -c santandermetgroup r-climate4r
+```
+
+Activate the conda environment to work with climate4R. Deactivate the environment with:
+
+```bash
+conda deactivate
+```
+
 ### Direct package installation from github:
+
+Individual packages can be installed directly from the github sources.
 
 ``` r
     > library(devtools)
@@ -60,26 +85,7 @@ Moreover, there is a [notebook repository](https://github.com/SantanderMetGroup/
                  "SantanderMetGroup/downscaleR"))
 ```
 
-### Installation using miniconda:
-
-[Miniconda](https://docs.conda.io/en/latest/miniconda.html) is a free minimal installer for conda. Using the [conda recipe](https://github.com/SantanderMetGroup/climate4R/tree/master/conda) it is possible to install an up-to-date version of the different packages composing the `climate4R` framework, and all the associated library dependencies (udunits, openjdk, netcdf Java etc.), avoiding some possible problems like the R-java configuration etc. Note that the appropriate miniconda distribution must be installed before running the command (go to the [miniconda installers page](https://docs.conda.io/en/latest/miniconda.html)):
-
-```bash
-# create a conda environment
-conda create --name nameofmycondaenvironment
-# activate the environment
-conda activate nameofmycondaenvironment
-# install climate4R
-conda install -c defaults -c r -c conda-forge -c santandermetgroup climate4r
-```
-Activate the conda environment to work with climate4R. To deactivate the environment run the following:
-
-```bash
-# deactivate the environment
-conda deactivate nameofmycondaenvironment
-```
-
-### NOTE: installation of specific package versions
+#### NOTE: installation of specific package versions
 
 In case a particular paper notebook is to be replicated, the installation of specific version tags can be done by just explicitly indicating the tag number in the repo name. For example:
 

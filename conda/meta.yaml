@@ -1,0 +1,44 @@
+package:
+  name: r-climate4r
+  version: 2.5.3
+build:
+  string: r36_1
+  noarch: generic
+requirements:
+  build: []
+  run:
+  #r dependencies
+  - r-base >=3.6.3,<3.7
+  - r-climate4r.udg ==0.2.3
+  - r-loader.java ==1.1.1
+  - r-loader ==1.7.1
+  - r-loader.ecoms ==1.4.6
+  - r-transformer ==2.1.3
+  - r-downscaler ==3.3.3
+  - r-downscaler.keras ==1.0.0
+  - r-visualizer ==1.6.1
+  - r-convertr ==0.2.0
+  - r-geoprocessor ==0.2.0
+  - r-climate4r.climdex ==0.2.2
+  - r-climate4r.indices ==0.2.0
+  - r-loader.2nc ==0.1.2
+  - r-firedanger ==1.1.0
+  - r-value ==2.2.1
+  - r-climate4r.value ==0.0.2
+  - r-mopa ==1.0.0
+  - r-drought4r ==0.2.0
+  - r-climate4r.datasets ==0.0.1
+  #python dependencies
+  - python >=3.7,<3.8
+  - iris ==3.0.4
+
+about:
+  home: http://www.meteo.unican.es/climate4r
+  license: GPL-3.0-or-later
+  summary: Climate4R Framework
+  license_family: GPL3
+
+extra:
+  recipe-maintainers:
+    - conda-forge/r
+    - cofinoa
