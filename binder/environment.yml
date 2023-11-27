@@ -1,0 +1,45 @@
+name: climate4R
+channels:
+  - conda-forge
+  - r 
+  - defaults
+dependencies:
+  - nbgitpuller
+  - r-base=3.6
+  - r-caret=6.0
+  - r-dismo=1.3
+  - r-spatstat=1.64
+  - r-padr=0.5
+  - r-presenceabsence=1.1
+  - r-deepnet=0.2
+  - r-splancs=2.01
+  - r-gtools=3.8
+  - r-spei=1.7
+  - r-tree=1.0
+  - r-rmarkdown=2.8
+  - r-devtools=2.4
+  - r-spatstat.linnet=1.65
+  - r-sampling=2.9
+  - r-geosphere=1.5
+  - r-randomforest=4.6
+  - r-keras=2.4
+  - r-rcurl=1.98
+  - r-e1071=1.7
+  - r-mapplots=1.5
+  - r-vioplot=0.3
+  - r-akima=0.6
+  - r-ncdf4=1.17
+  - r-glmnet=4.1
+  - r-latticeextra=0.6
+  - r-rjava=1.0
+  - r-sticky=0.5
+  - r-verification=1.42
+  - r-udunits2=0.13
+  - r-easyverification=0.4
+  - r-kohonen=3.0
+  - r-ranger=0.12
+  - r-climdex.pcic=1.1
+  - r-gdalutils=2.0
+  - r-evd=2.3
+  - r-signal=0.7
+  - r-earth=5.3

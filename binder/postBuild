@@ -1,0 +1,3 @@
+#!/bin/bash
+set -ex
+Rscript binder/install.R
