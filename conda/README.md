@@ -10,7 +10,7 @@ mamba install -c conda-forge r-climate4r
 _Note for jupyter notebook users_: From a dedicated environment, to run notebooks using climate4R include it as:
 
 ```bash
-mamaba install -c conda-forge r-climate4r jupyter r-irkernel
+mamba install -c conda-forge r-climate4r jupyter r-irkernel
 ```
 
 in order to include jupyter notebooks in your newly created environment
