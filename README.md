@@ -9,7 +9,7 @@ It builds on two main data structures (grid and station, including metadata) to 
 
 ### Current structure and new metapackage
 
-As of version **2.7.x**, the recommended way to install the entire Climate4R ecosystem is through the **metapackage [`climate4r-meta`](https://github.com/SantanderMetGroup/climate4R-meta)**.  
+As of version **2.7.x**, the recommended way to install the entire Climate4R ecosystem is through the **metapackage [`climate4r-meta`](SantanderMetGroup/climate4R-meta)**.  
 This repository now focuses on documentation, references, and examples.
 
 > **If you just want to install and use Climate4R**, please use:
@@ -18,7 +18,7 @@ This repository now focuses on documentation, references, and examples.
 > conda install -c conda-forge r-climate4r
 > ~~~
 >
-> or see the [`climate4r-meta`](https://github.com/SantanderMetGroup/climate4R-meta) repository for details.
+> or see the [`climate4r-meta`](SantanderMetGroup/climate4R-meta) repository for details.
 
 ---
 
@@ -26,18 +26,18 @@ This repository now focuses on documentation, references, and examples.
 
 The Climate4R ecosystem consists of interoperable R packages covering all steps of the climate data workflow:
 
-- **Core packages:** [`loadeR`](https://github.com/SantanderMetGroup/loadeR), [`transformeR`](https://github.com/SantanderMetGroup/transformeR), [`downscaleR`](https://github.com/SantanderMetGroup/downscaleR), [`visualizeR`](https://github.com/SantanderMetGroup/visualizeR)
+- **Core packages:** [`loadeR`](SantanderMetGroup/loadeR), [`transformeR`](SantanderMetGroup/transformeR), [`downscaleR`](SantanderMetGroup/downscaleR), [`visualizeR`](SantanderMetGroup/visualizeR)
 - **Extended functionality:**  
-  [`convertR`](https://github.com/SantanderMetGroup/convertR) (unit handling),  
-  [`geoprocessoR`](https://github.com/SantanderMetGroup/geoprocessoR) (geoprocessing),  
-  [`climate4R.UDG`](https://github.com/SantanderMetGroup/climate4R.UDG) (data gateway interface),  
-  [`climate4R.indices`](https://github.com/SantanderMetGroup/climate4R.indices),  
-  [`climate4R.climdex`](https://github.com/SantanderMetGroup/climate4R.climdex),  
-  [`climate4R.value`](https://github.com/SantanderMetGroup/climate4R.value),  
-  [`downscaleR.keras`](https://github.com/SantanderMetGroup/downscaleR.keras),  
-  [`fireDanger`](https://github.com/SantanderMetGroup/fireDanger),  
-  [`mopa`](https://github.com/SantanderMetGroup/mopa),  
-  [`drought4R`](https://github.com/SantanderMetGroup/drought4R), and others.
+  [`convertR`](SantanderMetGroup/convertR) (unit handling),  
+  [`geoprocessoR`](SantanderMetGroup/geoprocessoR) (geoprocessing),  
+  [`climate4R.UDG`](SantanderMetGroup/climate4R.UDG) (data gateway interface),  
+  [`climate4R.indices`](SantanderMetGroup/climate4R.indices),  
+  [`climate4R.climdex`](SantanderMetGroup/climate4R.climdex),  
+  [`climate4R.value`](SantanderMetGroup/climate4R.value),  
+  [`downscaleR.keras`](SantanderMetGroup/downscaleR.keras),  
+  [`fireDanger`](SantanderMetGroup/fireDanger),  
+  [`mopa`](SantanderMetGroup/mopa),  
+  [`drought4R`](SantanderMetGroup/drought4R), and others.
 
 Climate4R connects transparently to the **Santander Climate Data Gateway**, offering direct access to major climate datasets such as CMIP5, CORDEX, ERA5, and others.  
 It is also the foundation of the **climate4R Hub**, a cloud-based service running at [IFCA/CSIC Cloud Services](https://ifca.unican.es/en-us/research/advanced-computing-and-e-science).
@@ -66,7 +66,7 @@ Additional references for specific components and applications include:
 - [Iturbide et al. 2018](https://journal.r-project.org/archive/2018/RJ-2018-019/index.html) – Species distribution models  
 
 For illustrative notebooks and examples:  
-👉 [Climate4R Notebooks Repository](https://github.com/SantanderMetGroup/notebooks)
+👉 [Climate4R Notebooks Repository](SantanderMetGroup/notebooks)
 
 ---
 
@@ -101,7 +101,7 @@ installs the `visualizeR` package version used in Frías _et al._ 2018, while th
 
 ## Example of Use
 
-A simple example showing the main functionality of Climate4R — calculating an ETCCDI index (Summer Days) from bias-corrected EURO-CORDEX data — is available in the [introductory document](/man/2018_ClimateInformatics_Gutierrez.pdf) and the companion [Jupyter notebook](/man/notebooks/climate4R.ipynb).
+A simple example showing the main functionality of Climate4R, calculating an ETCCDI index (Summer Days) from bias-corrected EURO-CORDEX data, is available in the [introductory document](/man/2018_ClimateInformatics_Gutierrez.pdf) and the companion [Jupyter notebook](/man/notebooks/climate4R.ipynb).
 
 <img src="/man/figures/climate4r_example.png" align="center" alt="" width="" />
 
@@ -119,7 +119,7 @@ Before posting issues:
 See the [StackOverflow posting guidelines](https://stackoverflow.com/help/how-to-ask) for reference.
 
 Main tracker for framework-wide questions:  
-👉 [Climate4R Issues](https://github.com/SantanderMetGroup/climate4R/issues)
+👉 [Climate4R Issues](SantanderMetGroup/climate4R/issues)
 
 ---
 
@@ -127,5 +127,4 @@ Main tracker for framework-wide questions:
 
 Climate4R is distributed under the **GNU General Public License v3.0 (GPL-3)**.
 
-
-
+---
